@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -196,7 +197,7 @@ const planets = [
     detailedInfo: {
       overview: "Saturn is the sixth planet from the Sun and the second-largest in our solar system. It's best known for its spectacular ring system, making it one of the most beautiful objects in our solar system.",
       physicalCharacteristics: "Saturn is a gas giant with a diameter of about 72,367 miles (116,464 km). It's less dense than water and has at least 146 moons, including Titan, which has a thick atmosphere.",
-      atmosphere: "Saturn's atmosphere is composed mainly of hydrogen and helium, with powerful winds reaching speeds of up to 1,100 mph.",
+      atmosphere: "Saturn's atmosphere is composed mainly of hydrogen and helium, with powerful winds reaching speeds of up to 1,100 mph (1,800 km/h).",
       exploration: "The Cassini spacecraft studied Saturn for 13 years, providing incredible insights into the planet and its moons before ending its mission in 2017.",
       funFacts: [
         "Saturn's rings are made mostly of ice particles and rocky debris",
@@ -259,40 +260,21 @@ const planets = [
 ];
 
 const LearnPage = () => {
-  const [selectedPlanet, setSelectedPlanet] = useState(null);
+  const [selectedPlanet, setSelectedPlanet] = useState(planets[0]);
   const [scrollY, setScrollY] = useState(0);
-  const [hasScrolledToZoom, setHasScrolledToZoom] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const newScrollY = window.scrollY;
-      setScrollY(newScrollY);
-      
-      // Mark as zoomed when user has scrolled significantly
-      if (newScrollY > 400) {
-        setHasScrolledToZoom(true);
-      } else {
-        setHasScrolledToZoom(false);
-        // Clear selected planet when scrolling back up
-        if (newScrollY < 200) {
-          setSelectedPlanet(null);
-        }
-      }
-    };
-    
+    const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handlePlanetClick = (planet: typeof planets[0]) => {
     setSelectedPlanet(planet);
-    // Only scroll to info if we're already zoomed in
-    if (hasScrolledToZoom) {
-      document.getElementById('planet-info')?.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+    document.getElementById('planet-info')?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
   };
 
   // Calculate effects based on scroll (0-500px range)
@@ -306,9 +288,6 @@ const LearnPage = () => {
   // Diagram effects: zoom in and center
   const diagramScale = 1 + (scrollProgress * 0.5); // Zoom in 50%
   const diagramOpacity = 0.3 + (scrollProgress * 0.7); // Fade in from 30% to 100%
-
-  // Only show planet info when user has scrolled to zoom AND selected a planet
-  const shouldShowPlanetInfo = selectedPlanet && hasScrolledToZoom;
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
@@ -421,136 +400,134 @@ const LearnPage = () => {
       {/* Spacer to enable scrolling */}
       <div className="h-[100vh]"></div>
 
-      {/* Planet Information - Only show when scrolled to zoom AND a planet is selected */}
-      {shouldShowPlanetInfo && (
-        <div id="planet-info" className="min-h-screen bg-black px-4 py-16">
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-gray-900/90 border-white/20 backdrop-blur-lg animate-fade-in">
-              <div className="p-8">
-                {/* Planet image section */}
-                <div className="flex justify-center mb-8">
-                  <div className="relative group">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${selectedPlanet.glowColor} rounded-full blur-2xl scale-110`}></div>
-                    <div 
-                      className={`w-80 h-80 md:w-96 md:h-96 rounded-full relative z-10 ${selectedPlanet.shadowColor} shadow-2xl bg-cover bg-center bg-no-repeat`}
-                      style={{ 
-                        backgroundImage: `url(${selectedPlanet.image})`,
-                        backgroundSize: 'contain',
-                        backgroundPosition: 'center',
-                      }}
-                    />
-                  </div>
-                </div>
-
-                {/* Planet info */}
-                <div className="text-center space-y-6 animate-scale-in">
-                  <h2 className="text-4xl md:text-5xl font-bold text-white">
-                    {selectedPlanet.name}
-                  </h2>
-                  
-                  <h3 className="text-2xl text-purple-300 font-semibold">
-                    {selectedPlanet.title}
-                  </h3>
-                  
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                    <p className="text-lg text-gray-100 leading-relaxed max-w-3xl mx-auto">
-                      {selectedPlanet.description}
-                    </p>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mt-8">
-                    {selectedPlanet.traits.map((trait, index) => (
-                      <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                        <span className="text-white font-semibold text-center block">{trait}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Detailed Information Accordion */}
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 mt-8">
-                    <Accordion type="single" collapsible className="w-full">
-                      <AccordionItem value="overview" className="border-white/10">
-                        <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
-                          {selectedPlanet.id === 'sun' ? 'Star' : selectedPlanet.id === 'moon' ? 'Moon' : 'Planet'} Overview
-                        </AccordionTrigger>
-                        <AccordionContent className="text-gray-200 px-6 pb-4">
-                          {selectedPlanet.detailedInfo.overview}
-                        </AccordionContent>
-                      </AccordionItem>
-                      
-                      <AccordionItem value="physical" className="border-white/10">
-                        <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
-                          Physical Characteristics
-                        </AccordionTrigger>
-                        <AccordionContent className="text-gray-200 px-6 pb-4">
-                          {selectedPlanet.detailedInfo.physicalCharacteristics}
-                        </AccordionContent>
-                      </AccordionItem>
-                      
-                      <AccordionItem value="atmosphere" className="border-white/10">
-                        <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
-                          {selectedPlanet.id === 'sun' ? 'Composition' : 'Atmosphere & Climate'}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-gray-200 px-6 pb-4">
-                          {selectedPlanet.detailedInfo.atmosphere}
-                        </AccordionContent>
-                      </AccordionItem>
-                      
-                      <AccordionItem value="exploration" className="border-white/10">
-                        <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
-                          Space Exploration
-                        </AccordionTrigger>
-                        <AccordionContent className="text-gray-200 px-6 pb-4">
-                          {selectedPlanet.detailedInfo.exploration}
-                        </AccordionContent>
-                      </AccordionItem>
-                      
-                      <AccordionItem value="facts" className="border-white/10">
-                        <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
-                          Amazing Facts
-                        </AccordionTrigger>
-                        <AccordionContent className="text-gray-200 px-6 pb-4">
-                          <ul className="space-y-2">
-                            {selectedPlanet.detailedInfo.funFacts.map((fact, index) => (
-                              <li key={index} className="flex items-start gap-2">
-                                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
-                                {fact}
-                              </li>
-                            ))}
-                          </ul>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </div>
-                  
-                  <div className="pt-6">
-                    <Button 
-                      variant="outline" 
-                      className="border-white/30 text-white hover:bg-white/10 hover:text-white bg-transparent hover:border-white/50"
-                      onClick={() => window.open(selectedPlanet.learnMoreUrl, '_blank')}
-                    >
-                      <ExternalLink className="w-5 h-5 mr-2" />
-                      Learn More from NASA
-                    </Button>
-                  </div>
-
-                  <div className="pt-8">
-                    <Button 
-                      variant="ghost" 
-                      className="text-white/70 hover:text-white hover:bg-white/10"
-                      onClick={() => {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                    >
-                      ↑ Back to Solar System
-                    </Button>
-                  </div>
+      {/* Planet Information */}
+      <div id="planet-info" className="min-h-screen bg-black px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <Card className="bg-gray-900/90 border-white/20 backdrop-blur-lg animate-fade-in">
+            <div className="p-8">
+              {/* Planet image section */}
+              <div className="flex justify-center mb-8">
+                <div className="relative group">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${selectedPlanet.glowColor} rounded-full blur-2xl scale-110`}></div>
+                  <div 
+                    className={`w-80 h-80 md:w-96 md:h-96 rounded-full relative z-10 ${selectedPlanet.shadowColor} shadow-2xl bg-cover bg-center bg-no-repeat`}
+                    style={{ 
+                      backgroundImage: `url(${selectedPlanet.image})`,
+                      backgroundSize: 'contain',
+                      backgroundPosition: 'center',
+                    }}
+                  />
                 </div>
               </div>
-            </Card>
-          </div>
+
+              {/* Planet info */}
+              <div className="text-center space-y-6 animate-scale-in">
+                <h2 className="text-4xl md:text-5xl font-bold text-white">
+                  {selectedPlanet.name}
+                </h2>
+                
+                <h3 className="text-2xl text-purple-300 font-semibold">
+                  {selectedPlanet.title}
+                </h3>
+                
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                  <p className="text-lg text-gray-100 leading-relaxed max-w-3xl mx-auto">
+                    {selectedPlanet.description}
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mt-8">
+                  {selectedPlanet.traits.map((trait, index) => (
+                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                      <span className="text-white font-semibold text-center block">{trait}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Detailed Information Accordion */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 mt-8">
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="overview" className="border-white/10">
+                      <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
+                        {selectedPlanet.id === 'sun' ? 'Star' : selectedPlanet.id === 'moon' ? 'Moon' : 'Planet'} Overview
+                      </AccordionTrigger>
+                      <AccordionContent className="text-gray-200 px-6 pb-4">
+                        {selectedPlanet.detailedInfo.overview}
+                      </AccordionContent>
+                    </AccordionItem>
+                    
+                    <AccordionItem value="physical" className="border-white/10">
+                      <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
+                        Physical Characteristics
+                      </AccordionTrigger>
+                      <AccordionContent className="text-gray-200 px-6 pb-4">
+                        {selectedPlanet.detailedInfo.physicalCharacteristics}
+                      </AccordionContent>
+                    </AccordionItem>
+                    
+                    <AccordionItem value="atmosphere" className="border-white/10">
+                      <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
+                        {selectedPlanet.id === 'sun' ? 'Composition' : 'Atmosphere & Climate'}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-gray-200 px-6 pb-4">
+                        {selectedPlanet.detailedInfo.atmosphere}
+                      </AccordionContent>
+                    </AccordionItem>
+                    
+                    <AccordionItem value="exploration" className="border-white/10">
+                      <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
+                        Space Exploration
+                      </AccordionTrigger>
+                      <AccordionContent className="text-gray-200 px-6 pb-4">
+                        {selectedPlanet.detailedInfo.exploration}
+                      </AccordionContent>
+                    </AccordionItem>
+                    
+                    <AccordionItem value="facts" className="border-white/10">
+                      <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
+                        Amazing Facts
+                      </AccordionTrigger>
+                      <AccordionContent className="text-gray-200 px-6 pb-4">
+                        <ul className="space-y-2">
+                          {selectedPlanet.detailedInfo.funFacts.map((fact, index) => (
+                            <li key={index} className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
+                              {fact}
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+                
+                <div className="pt-6">
+                  <Button 
+                    variant="outline" 
+                    className="border-white/30 text-white hover:bg-white/10 hover:text-white bg-transparent hover:border-white/50"
+                    onClick={() => window.open(selectedPlanet.learnMoreUrl, '_blank')}
+                  >
+                    <ExternalLink className="w-5 h-5 mr-2" />
+                    Learn More from NASA
+                  </Button>
+                </div>
+
+                <div className="pt-8">
+                  <Button 
+                    variant="ghost" 
+                    className="text-white/70 hover:text-white hover:bg-white/10"
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    ↑ Back to Solar System
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
-      )}
+      </div>
     </div>
   );
 };
