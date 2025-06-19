@@ -13,7 +13,7 @@ const planets = [
     title: "The Life Giver",
     description: "The Sun is the star at the center of our solar system. It's a massive ball of hot plasma that provides the light and heat necessary for life on Earth. The Sun contains 99.86% of the mass in our solar system and its core temperature reaches about 15 million degrees Celsius.",
     traits: ["Nuclear fusion powerhouse", "Magnetic field generator", "Life sustainer", "Solar wind creator"],
-    image: "https://th.bing.com/th/id/OIP.20SqwzCKmn_95H2_Nu4VqwHaHa?r=0&rs=1&pid=ImgDetMain",
+    image: "https://png.pngtree.com/png-clipart/20230414/original/pngtree-summer-real-texture-sun-png-image_9054207.png",
     glowColor: "from-yellow-400/30 to-orange-500/30",
     shadowColor: "shadow-yellow-500/20",
     learnMoreUrl: "https://www.nasa.gov/sun/",
@@ -43,7 +43,7 @@ const planets = [
     shadowColor: "shadow-gray-500/20",
     learnMoreUrl: "https://www.nasa.gov/mercury/",
     size: "w-6 h-6",
-    orbitRadius: 80,
+    orbitRadius: 60,
     detailedInfo: {
       overview: "Mercury is the smallest planet in our solar system and the closest to the Sun. Despite its proximity to the Sun, it has ice at its poles and experiences extreme temperature variations.",
       physicalCharacteristics: "Mercury has a diameter of about 3,032 miles (4,879 km), making it only slightly larger than Earth's Moon. It has no moons or rings.",
@@ -68,7 +68,7 @@ const planets = [
     shadowColor: "shadow-pink-500/20",
     learnMoreUrl: "https://venus.nasa.gov/",
     size: "w-7 h-7",
-    orbitRadius: 100,
+    orbitRadius: 75,
     detailedInfo: {
       overview: "Venus is the second planet from the Sun and is often called Earth's twin due to similar size. However, it's the hottest planet in our solar system with surface temperatures hot enough to melt lead.",
       physicalCharacteristics: "Venus has a diameter of about 7,521 miles (12,104 km), almost the same as Earth. It rotates backwards compared to most planets and has no moons.",
@@ -93,7 +93,7 @@ const planets = [
     shadowColor: "shadow-blue-500/20",
     learnMoreUrl: "https://www.nasa.gov/earth/",
     size: "w-8 h-8",
-    orbitRadius: 120,
+    orbitRadius: 90,
     detailedInfo: {
       overview: "Earth is the third planet from the Sun and the only known planet to harbor life. It's our home world, with diverse ecosystems, vast oceans, and a protective atmosphere that makes life possible.",
       physicalCharacteristics: "Earth has a diameter of about 7,918 miles (12,742 km) and one natural satellite, the Moon. It's composed of 71% water surface and has seven continents.",
@@ -108,6 +108,31 @@ const planets = [
     }
   },
   {
+    id: 'moon',
+    name: "Moon",
+    title: "The Celestial Companion",
+    description: "The Moon is Earth's loyal companion, influencing our tides and illuminating our nights. It has been humanity's stepping stone to the stars and continues to fascinate us with its mysterious beauty and gravitational dance with Earth.",
+    traits: ["Loyal", "Mysterious", "Influential", "Guiding"],
+    image: "https://th.bing.com/th/id/R.9a5611525608c7bd1b8e2f2845d9c381?rik=aIsmGEsca3CuDg&riu=http%3a%2f%2fpngimg.com%2fuploads%2fmoon%2fmoon_PNG21.png&ehk=TWToKq1UKhWID93B4u7%2bKlZVgguWCXwTrkm5oaS%2b2x4%3d&risl=&pid=ImgRaw&r=0",
+    glowColor: "from-gray-300/30 to-blue-400/30",
+    shadowColor: "shadow-gray-400/20",
+    learnMoreUrl: "https://www.nasa.gov/moon/",
+    size: "w-4 h-4",
+    orbitRadius: 100,
+    detailedInfo: {
+      overview: "The Moon is Earth's only natural satellite and the fifth largest moon in the solar system. It plays a crucial role in stabilizing Earth's rotation and creating tides.",
+      physicalCharacteristics: "The Moon has a diameter of about 2,159 miles (3,474 km), roughly one-quarter the size of Earth. It's the largest moon relative to its parent planet in our solar system.",
+      atmosphere: "The Moon has virtually no atmosphere, which means no weather, no wind, and extreme temperature variations from 250°F (121°C) in sunlight to -387°F (-233°C) in shadow.",
+      exploration: "The Moon is the only celestial body beyond Earth that humans have visited. Six Apollo missions successfully landed 12 astronauts on the lunar surface between 1969 and 1972.",
+      funFacts: [
+        "The Moon is moving away from Earth at about 1.5 inches per year",
+        "A day on the Moon lasts about 29.5 Earth days",
+        "The Moon's gravity is about 1/6th of Earth's",
+        "The same side of the Moon always faces Earth"
+      ]
+    }
+  },
+  {
     id: 'mars',
     name: "Mars",
     title: "The Adventurous Pioneer",
@@ -118,7 +143,7 @@ const planets = [
     shadowColor: "shadow-red-500/20",
     learnMoreUrl: "https://mars.nasa.gov/",
     size: "w-7 h-7",
-    orbitRadius: 140,
+    orbitRadius: 115,
     detailedInfo: {
       overview: "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System. Known as the Red Planet due to iron oxide on its surface, Mars has fascinated humans for centuries.",
       physicalCharacteristics: "Mars has a diameter of about 4,220 miles (6,792 km), roughly half the size of Earth. It has two small moons, Phobos and Deimos, and the largest volcano in the solar system, Olympus Mons.",
@@ -138,12 +163,12 @@ const planets = [
     title: "The Mighty Protector",
     description: "Jupiter is a natural leader with immense strength and presence. Like the giant of our solar system, it protects those around it and commands respect wherever it goes. Its wisdom comes from experience and its influence is as vast as its size.",
     traits: ["Protective", "Wise", "Powerful", "Magnetic"],
-    image: "https://png.pngtree.com/png-clipart/20230927/original/pngtree-3d-jupiter-planet-illustration-png-image_13003328.png",
+    image: "https://static.vecteezy.com/system/resources/thumbnails/049/514/755/small_2x/jupiter-planet-closeup-view-isolated-transparent-png.png",
     glowColor: "from-orange-400/30 to-red-600/30",
     shadowColor: "shadow-orange-500/20",
     learnMoreUrl: "https://www.nasa.gov/jupiter/",
     size: "w-12 h-12",
-    orbitRadius: 180,
+    orbitRadius: 140,
     detailedInfo: {
       overview: "Jupiter is the largest planet in our solar system and the fifth from the Sun. This gas giant has a mass greater than all other planets combined and acts as a cosmic vacuum cleaner, protecting inner planets from asteroids.",
       physicalCharacteristics: "Jupiter has a diameter of about 86,881 miles (139,820 km) and at least 95 moons, including the four large Galilean moons. Its Great Red Spot is a storm larger than Earth.",
@@ -168,7 +193,7 @@ const planets = [
     shadowColor: "shadow-yellow-500/20",
     learnMoreUrl: "https://saturn.jpl.nasa.gov/",
     size: "w-10 h-10",
-    orbitRadius: 220,
+    orbitRadius: 170,
     detailedInfo: {
       overview: "Saturn is the sixth planet from the Sun and the second-largest in our solar system. It's best known for its spectacular ring system, making it one of the most beautiful objects in our solar system.",
       physicalCharacteristics: "Saturn is a gas giant with a diameter of about 72,367 miles (116,464 km). It's less dense than water and has at least 146 moons, including Titan, which has a thick atmosphere.",
@@ -188,12 +213,12 @@ const planets = [
     title: "The Revolutionary Innovator",
     description: "Uranus is unique, innovative, and marches to the beat of its own drum. Like Uranus rolling on its side, it approaches cosmic life from unexpected angles. Its originality and vision inspire others to think differently.",
     traits: ["Innovative", "Unique", "Visionary", "Independent"],
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
+    image: "https://wallpapers.com/images/hd/uranus-astronomical-object-png-ayc-b770a2f4gjnhxol8.png",
     glowColor: "from-cyan-400/30 to-blue-600/30",
     shadowColor: "shadow-cyan-500/20",
     learnMoreUrl: "https://www.nasa.gov/uranus/",
     size: "w-8 h-8",
-    orbitRadius: 260,
+    orbitRadius: 200,
     detailedInfo: {
       overview: "Uranus is the seventh planet from the Sun and is unique for rotating on its side. This ice giant has a distinctive blue-green color due to methane in its atmosphere.",
       physicalCharacteristics: "Uranus has a diameter of about 31,518 miles (50,724 km) and 27 known moons. It has a faint ring system and rotates at a 98-degree angle to its orbit.",
@@ -213,12 +238,12 @@ const planets = [
     title: "The Mysterious Dreamer",
     description: "Neptune is deep and enigmatic, possessing an otherworldly quality that draws others in. Like Neptune's distant beauty, it's complex and fascinating. Its intuition guides it through the cosmos's deepest mysteries.",
     traits: ["Mysterious", "Intuitive", "Deep", "Spiritual"],
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
+    image: "https://jfbdesign.com/wp-content/uploads/revslider/solar-system-showcase-slider1/neptune.png",
     glowColor: "from-blue-600/30 to-indigo-800/30",
     shadowColor: "shadow-blue-500/20",
     learnMoreUrl: "https://neptune.nasa.gov/",
     size: "w-8 h-8",
-    orbitRadius: 300,
+    orbitRadius: 230,
     detailedInfo: {
       overview: "Neptune is the eighth and outermost planet in our solar system. This ice giant is known for its deep blue color and is the windiest planet, with speeds reaching up to 1,200 mph.",
       physicalCharacteristics: "Neptune has a diameter of about 30,775 miles (49,528 km) and takes 165 Earth years to orbit the Sun. It has 16 known moons, with Triton being the largest.",
@@ -246,11 +271,26 @@ const LearnPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black relative overflow-hidden">
+      {/* Starry background */}
+      <div className="absolute inset-0">
+        {[...Array(200)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-0.5 h-0.5 bg-white rounded-full opacity-80"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+            }}
+          />
+        ))}
+      </div>
+
       {/* Solar System */}
-      <div className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Title positioned at top to not block planets */}
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 text-center z-20">
+      <div className="relative h-screen flex items-center justify-center overflow-hidden pt-32">
+        {/* Title positioned higher to avoid blocking planets */}
+        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 text-center z-20">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
             Our Solar System
           </h1>
@@ -261,9 +301,9 @@ const LearnPage = () => {
 
         {/* Solar System Layout with Orbital Rings - Made smaller */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-full h-full max-w-3xl max-h-3xl">
+          <div className="relative w-full h-full max-w-2xl max-h-2xl">
             {/* Orbital rings - smaller radii */}
-            {[80, 100, 120, 140, 180, 220, 260, 300].map((radius, index) => (
+            {[60, 75, 90, 100, 115, 140, 170, 200, 230].map((radius, index) => (
               <div
                 key={radius}
                 className="absolute border border-white/20 rounded-full"
@@ -277,7 +317,7 @@ const LearnPage = () => {
               />
             ))}
 
-            {/* Sun at center - now visible when not hovered */}
+            {/* Sun at center - always visible */}
             <button
               onClick={() => handlePlanetClick(planets[0])}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full transition-all duration-300 hover:scale-110 cursor-pointer group z-10 bg-cover bg-center bg-no-repeat"
@@ -286,7 +326,7 @@ const LearnPage = () => {
                 backgroundSize: 'contain',
               }}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${planets[0].glowColor} rounded-full blur-lg scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-br ${planets[0].glowColor} rounded-full blur-lg scale-150 opacity-60 group-hover:opacity-100 transition-opacity duration-300`}></div>
               <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span className="text-white text-sm font-semibold bg-black/80 px-2 py-1 rounded whitespace-nowrap">
                   {planets[0].name}
@@ -296,7 +336,7 @@ const LearnPage = () => {
 
             {/* Planets on orbits */}
             {planets.slice(1).map((planet, index) => {
-              const angle = (index * 45) % 360; // Distribute planets around orbits
+              const angle = (index * 40) % 360; // Distribute planets around orbits
               const x = Math.cos((angle * Math.PI) / 180) * planet.orbitRadius;
               const y = Math.sin((angle * Math.PI) / 180) * planet.orbitRadius;
               
@@ -375,7 +415,7 @@ const LearnPage = () => {
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="overview" className="border-white/10">
                       <AccordionTrigger className="text-white hover:text-blue-300 px-6 py-4">
-                        {selectedPlanet.id === 'sun' ? 'Star' : 'Planet'} Overview
+                        {selectedPlanet.id === 'sun' ? 'Star' : selectedPlanet.id === 'moon' ? 'Moon' : 'Planet'} Overview
                       </AccordionTrigger>
                       <AccordionContent className="text-gray-200 px-6 pb-4">
                         {selectedPlanet.detailedInfo.overview}
@@ -430,7 +470,7 @@ const LearnPage = () => {
                 <div className="pt-6">
                   <Button 
                     variant="outline" 
-                    className="border-white/30 text-white hover:bg-white/10 hover:text-white bg-transparent"
+                    className="border-white/30 text-white hover:bg-white/10 hover:text-white bg-transparent hover:border-white/50"
                     onClick={() => window.open(selectedPlanet.learnMoreUrl, '_blank')}
                   >
                     <ExternalLink className="w-5 h-5 mr-2" />
