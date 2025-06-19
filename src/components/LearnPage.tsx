@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ExternalLink } from 'lucide-react';
 
-// Updated planet data with correct PNG images
+// Updated planet data with correct PNG images matching ResultScreen
 const planets = [
   {
     id: 'sun',
@@ -17,7 +17,7 @@ const planets = [
     glowColor: "from-yellow-400/30 to-orange-500/30",
     shadowColor: "shadow-yellow-500/20",
     learnMoreUrl: "https://www.nasa.gov/sun/",
-    size: "w-12 h-12",
+    size: "w-16 h-16",
     orbitRadius: 0,
     detailedInfo: {
       overview: "The Sun is a yellow dwarf star, a hot ball of glowing gases at the heart of our solar system. Its gravity holds the solar system together, keeping everything from the biggest planets to the smallest particles of debris in its orbit.",
@@ -38,12 +38,12 @@ const planets = [
     title: "The Swift Messenger",
     description: "Mercury is quick-thinking, adaptable, and always on the move. Like the planet closest to the Sun, it thrives under pressure and can handle extreme situations. Its agility and rapid orbital speed make it an excellent example of cosmic efficiency.",
     traits: ["Quick-thinking", "Adaptable", "Communicative", "Resilient"],
-    image: "https://th.bing.com/th/id/OIP.r7vRcrm6TMerm32U8aDttwHaHa?r=0&rs=1&pid=ImgDetMain",
+    image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-gray-400/30 to-orange-500/30",
     shadowColor: "shadow-gray-500/20",
     learnMoreUrl: "https://www.nasa.gov/mercury/",
-    size: "w-6 h-6",
-    orbitRadius: 60,
+    size: "w-8 h-8",
+    orbitRadius: 80,
     detailedInfo: {
       overview: "Mercury is the smallest planet in our solar system and the closest to the Sun. Despite its proximity to the Sun, it has ice at its poles and experiences extreme temperature variations.",
       physicalCharacteristics: "Mercury has a diameter of about 3,032 miles (4,879 km), making it only slightly larger than Earth's Moon. It has no moons or rings.",
@@ -67,8 +67,8 @@ const planets = [
     glowColor: "from-pink-400/30 to-purple-600/30",
     shadowColor: "shadow-pink-500/20",
     learnMoreUrl: "https://venus.nasa.gov/",
-    size: "w-7 h-7",
-    orbitRadius: 75,
+    size: "w-9 h-9",
+    orbitRadius: 100,
     detailedInfo: {
       overview: "Venus is the second planet from the Sun and is often called Earth's twin due to similar size. However, it's the hottest planet in our solar system with surface temperatures hot enough to melt lead.",
       physicalCharacteristics: "Venus has a diameter of about 7,521 miles (12,104 km), almost the same as Earth. It rotates backwards compared to most planets and has no moons.",
@@ -88,12 +88,12 @@ const planets = [
     title: "The Nurturing Guardian",
     description: "Earth is grounded, caring, and deeply connected to life. Like our beautiful blue planet, it provides stability and support to all life in its orbit. Its empathy and wisdom make it a natural protector of the solar system.",
     traits: ["Nurturing", "Empathetic", "Stable", "Life-giving"],
-    image: "https://th.bing.com/th/id/R.f7d55168cbba981e7c1b0b39fb31ca6d?rik=Zc1WySqVPE4UbQ&pid=ImgRaw&r=0",
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-blue-400/30 to-green-500/30",
     shadowColor: "shadow-blue-500/20",
     learnMoreUrl: "https://www.nasa.gov/earth/",
-    size: "w-8 h-8",
-    orbitRadius: 90,
+    size: "w-10 h-10",
+    orbitRadius: 120,
     detailedInfo: {
       overview: "Earth is the third planet from the Sun and the only known planet to harbor life. It's our home world, with diverse ecosystems, vast oceans, and a protective atmosphere that makes life possible.",
       physicalCharacteristics: "Earth has a diameter of about 7,918 miles (12,742 km) and one natural satellite, the Moon. It's composed of 71% water surface and has seven continents.",
@@ -117,8 +117,8 @@ const planets = [
     glowColor: "from-gray-300/30 to-blue-400/30",
     shadowColor: "shadow-gray-400/20",
     learnMoreUrl: "https://www.nasa.gov/moon/",
-    size: "w-4 h-4",
-    orbitRadius: 100,
+    size: "w-5 h-5",
+    orbitRadius: 135,
     detailedInfo: {
       overview: "The Moon is Earth's only natural satellite and the fifth largest moon in the solar system. It plays a crucial role in stabilizing Earth's rotation and creating tides.",
       physicalCharacteristics: "The Moon has a diameter of about 2,159 miles (3,474 km), roughly one-quarter the size of Earth. It's the largest moon relative to its parent planet in our solar system.",
@@ -138,12 +138,12 @@ const planets = [
     title: "The Adventurous Pioneer",
     description: "Mars is bold, passionate, and always ready for the next adventure. Like the Red Planet, it has a fiery spirit and isn't afraid to explore uncharted territories. Its courage inspires others to push beyond their limits.",
     traits: ["Courageous", "Energetic", "Independent", "Pioneering"],
-    image: "https://pngimg.com/uploads/mars_planet/mars_planet_PNG31.png",
+    image: "https://images.unsplash.com/photo-1630694093867-4b947d812bf0?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-red-500/30 to-orange-600/30",
     shadowColor: "shadow-red-500/20",
     learnMoreUrl: "https://mars.nasa.gov/",
-    size: "w-7 h-7",
-    orbitRadius: 115,
+    size: "w-9 h-9",
+    orbitRadius: 155,
     detailedInfo: {
       overview: "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System. Known as the Red Planet due to iron oxide on its surface, Mars has fascinated humans for centuries.",
       physicalCharacteristics: "Mars has a diameter of about 4,220 miles (6,792 km), roughly half the size of Earth. It has two small moons, Phobos and Deimos, and the largest volcano in the solar system, Olympus Mons.",
@@ -163,12 +163,12 @@ const planets = [
     title: "The Mighty Protector",
     description: "Jupiter is a natural leader with immense strength and presence. Like the giant of our solar system, it protects those around it and commands respect wherever it goes. Its wisdom comes from experience and its influence is as vast as its size.",
     traits: ["Protective", "Wise", "Powerful", "Magnetic"],
-    image: "https://static.vecteezy.com/system/resources/thumbnails/049/514/755/small_2x/jupiter-planet-closeup-view-isolated-transparent-png.png",
+    image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-orange-400/30 to-red-600/30",
     shadowColor: "shadow-orange-500/20",
     learnMoreUrl: "https://www.nasa.gov/jupiter/",
-    size: "w-12 h-12",
-    orbitRadius: 140,
+    size: "w-16 h-16",
+    orbitRadius: 190,
     detailedInfo: {
       overview: "Jupiter is the largest planet in our solar system and the fifth from the Sun. This gas giant has a mass greater than all other planets combined and acts as a cosmic vacuum cleaner, protecting inner planets from asteroids.",
       physicalCharacteristics: "Jupiter has a diameter of about 86,881 miles (139,820 km) and at least 95 moons, including the four large Galilean moons. Its Great Red Spot is a storm larger than Earth.",
@@ -188,12 +188,12 @@ const planets = [
     title: "The Wise Strategist", 
     description: "Saturn is thoughtful and methodical, approaching the cosmos with wisdom and patience. Its systematic thinking and reliability make it a natural leader. Like Saturn's magnificent rings, it brings structure and beauty to chaos.",
     traits: ["Wise", "Patient", "Systematic", "Reliable"],
-    image: "https://static.vecteezy.com/system/resources/previews/039/630/632/non_2x/ai-generated-saturn-planet-isolated-on-transparent-background-free-png.png",
+    image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-yellow-400/30 to-amber-600/30",
     shadowColor: "shadow-yellow-500/20",
     learnMoreUrl: "https://saturn.jpl.nasa.gov/",
-    size: "w-10 h-10",
-    orbitRadius: 170,
+    size: "w-13 h-13",
+    orbitRadius: 230,
     detailedInfo: {
       overview: "Saturn is the sixth planet from the Sun and the second-largest in our solar system. It's best known for its spectacular ring system, making it one of the most beautiful objects in our solar system.",
       physicalCharacteristics: "Saturn is a gas giant with a diameter of about 72,367 miles (116,464 km). It's less dense than water and has at least 146 moons, including Titan, which has a thick atmosphere.",
@@ -213,12 +213,12 @@ const planets = [
     title: "The Revolutionary Innovator",
     description: "Uranus is unique, innovative, and marches to the beat of its own drum. Like Uranus rolling on its side, it approaches cosmic life from unexpected angles. Its originality and vision inspire others to think differently.",
     traits: ["Innovative", "Unique", "Visionary", "Independent"],
-    image: "https://wallpapers.com/images/hd/uranus-astronomical-object-png-ayc-b770a2f4gjnhxol8.png",
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-cyan-400/30 to-blue-600/30",
     shadowColor: "shadow-cyan-500/20",
     learnMoreUrl: "https://www.nasa.gov/uranus/",
-    size: "w-8 h-8",
-    orbitRadius: 200,
+    size: "w-11 h-11",
+    orbitRadius: 270,
     detailedInfo: {
       overview: "Uranus is the seventh planet from the Sun and is unique for rotating on its side. This ice giant has a distinctive blue-green color due to methane in its atmosphere.",
       physicalCharacteristics: "Uranus has a diameter of about 31,518 miles (50,724 km) and 27 known moons. It has a faint ring system and rotates at a 98-degree angle to its orbit.",
@@ -238,12 +238,12 @@ const planets = [
     title: "The Mysterious Dreamer",
     description: "Neptune is deep and enigmatic, possessing an otherworldly quality that draws others in. Like Neptune's distant beauty, it's complex and fascinating. Its intuition guides it through the cosmos's deepest mysteries.",
     traits: ["Mysterious", "Intuitive", "Deep", "Spiritual"],
-    image: "https://jfbdesign.com/wp-content/uploads/revslider/solar-system-showcase-slider1/neptune.png",
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-blue-600/30 to-indigo-800/30",
     shadowColor: "shadow-blue-500/20",
     learnMoreUrl: "https://neptune.nasa.gov/",
-    size: "w-8 h-8",
-    orbitRadius: 230,
+    size: "w-11 h-11",
+    orbitRadius: 310,
     detailedInfo: {
       overview: "Neptune is the eighth and outermost planet in our solar system. This ice giant is known for its deep blue color and is the windiest planet, with speeds reaching up to 1,200 mph.",
       physicalCharacteristics: "Neptune has a diameter of about 30,775 miles (49,528 km) and takes 165 Earth years to orbit the Sun. It has 16 known moons, with Triton being the largest.",
@@ -288,9 +288,9 @@ const LearnPage = () => {
       </div>
 
       {/* Solar System */}
-      <div className="relative h-screen flex items-center justify-center overflow-hidden pt-32">
-        {/* Title positioned higher to avoid blocking planets */}
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 text-center z-20">
+      <div className="relative h-screen flex items-center justify-center overflow-hidden pt-40">
+        {/* Title positioned higher */}
+        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 text-center z-20">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
             Our Solar System
           </h1>
@@ -299,11 +299,11 @@ const LearnPage = () => {
           </p>
         </div>
 
-        {/* Solar System Layout with Orbital Rings - Made smaller */}
+        {/* Solar System Layout with Orbital Rings - Made bigger */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-full h-full max-w-2xl max-h-2xl">
-            {/* Orbital rings - smaller radii */}
-            {[60, 75, 90, 100, 115, 140, 170, 200, 230].map((radius, index) => (
+          <div className="relative w-full h-full max-w-4xl max-h-4xl">
+            {/* Orbital rings - bigger radii */}
+            {[80, 100, 120, 135, 155, 190, 230, 270, 310].map((radius, index) => (
               <div
                 key={radius}
                 className="absolute border border-white/20 rounded-full"
@@ -320,7 +320,7 @@ const LearnPage = () => {
             {/* Sun at center - always visible */}
             <button
               onClick={() => handlePlanetClick(planets[0])}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full transition-all duration-300 hover:scale-110 cursor-pointer group z-10 bg-cover bg-center bg-no-repeat"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full transition-all duration-300 hover:scale-110 cursor-pointer group z-10 bg-cover bg-center bg-no-repeat"
               style={{
                 backgroundImage: `url(${planets[0].image})`,
                 backgroundSize: 'contain',
@@ -371,7 +371,7 @@ const LearnPage = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="bg-gray-900/90 border-white/20 backdrop-blur-lg animate-fade-in">
             <div className="p-8">
-              {/* Planet image section - using correct images */}
+              {/* Planet image section */}
               <div className="flex justify-center mb-8">
                 <div className="relative group">
                   <div className={`absolute inset-0 bg-gradient-to-br ${selectedPlanet.glowColor} rounded-full blur-2xl scale-110`}></div>
