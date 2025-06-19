@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Rocket, Stars, Planet } from 'lucide-react';
+import { Rocket, Stars, Globe } from 'lucide-react';
 
 interface StartScreenProps {
   onStart: () => void;
@@ -30,9 +30,9 @@ const StartScreen = ({ onStart }: StartScreenProps) => {
           </p>
           
           <div className="flex justify-center items-center gap-4 mb-12 animate-fade-in" style={{ animationDelay: '1s' }}>
-            <Planet className="w-6 h-6 text-blue-400" />
+            <Globe className="w-6 h-6 text-blue-400" />
             <span className="text-blue-300">8 Questions • 2 Minutes • Pure Magic</span>
-            <Planet className="w-6 h-6 text-purple-400" />
+            <Globe className="w-6 h-6 text-purple-400" />
           </div>
         </div>
 
