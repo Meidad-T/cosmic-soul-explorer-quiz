@@ -13,7 +13,7 @@ const planets = [
     title: "The Life Giver",
     description: "The Sun is the star at the center of our solar system. It's a massive ball of hot plasma that provides the light and heat necessary for life on Earth. The Sun contains 99.86% of the mass in our solar system and its core temperature reaches about 15 million degrees Celsius.",
     traits: ["Nuclear fusion powerhouse", "Magnetic field generator", "Life sustainer", "Solar wind creator"],
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=800&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1614728894747-a83421f3afb9?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-yellow-400/30 to-orange-500/30",
     shadowColor: "shadow-yellow-500/20",
     learnMoreUrl: "https://www.nasa.gov/sun/",
@@ -36,7 +36,7 @@ const planets = [
     id: 'mercury',
     name: "Mercury",
     title: "The Swift Messenger",
-    description: "You're quick-thinking, adaptable, and always on the move. Like the planet closest to the Sun, you thrive under pressure and can handle extreme situations. Your agility and communication skills make you an excellent connector of people and ideas.",
+    description: "Mercury is quick-thinking, adaptable, and always on the move. Like the planet closest to the Sun, it thrives under pressure and can handle extreme situations. Its agility and rapid orbital speed make it an excellent example of cosmic efficiency.",
     traits: ["Quick-thinking", "Adaptable", "Communicative", "Resilient"],
     image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-gray-400/30 to-orange-500/30",
@@ -61,7 +61,7 @@ const planets = [
     id: 'venus',
     name: "Venus",
     title: "The Creative Harmonizer", 
-    description: "You bring beauty and creativity wherever you go. Like Venus shining brightest in the sky, your artistic nature illuminates the world around you. Your harmonious spirit creates balance in chaos.",
+    description: "Venus brings beauty and creativity wherever it goes. Like Venus shining brightest in the sky, its artistic nature illuminates the cosmos around it. Its harmonious spirit creates balance in the celestial dance.",
     traits: ["Creative", "Artistic", "Harmonious", "Inspiring"],
     image: "https://images.unsplash.com/photo-1614728894747-a83421f3afb9?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-pink-400/30 to-purple-600/30",
@@ -86,7 +86,7 @@ const planets = [
     id: 'earth',
     name: "Earth",
     title: "The Nurturing Guardian",
-    description: "You're grounded, caring, and deeply connected to life around you. Like our beautiful blue planet, you provide stability and support to those in your orbit. Your empathy and wisdom make you a natural protector.",
+    description: "Earth is grounded, caring, and deeply connected to life. Like our beautiful blue planet, it provides stability and support to all life in its orbit. Its empathy and wisdom make it a natural protector of the solar system.",
     traits: ["Nurturing", "Empathetic", "Stable", "Life-giving"],
     image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-blue-400/30 to-green-500/30",
@@ -111,7 +111,7 @@ const planets = [
     id: 'mars',
     name: "Mars",
     title: "The Adventurous Pioneer",
-    description: "You're bold, passionate, and always ready for the next adventure. Like the Red Planet, you have a fiery spirit and aren't afraid to explore uncharted territories. Your courage inspires others to push beyond their limits.",
+    description: "Mars is bold, passionate, and always ready for the next adventure. Like the Red Planet, it has a fiery spirit and isn't afraid to explore uncharted territories. Its courage inspires others to push beyond their limits.",
     traits: ["Courageous", "Energetic", "Independent", "Pioneering"],
     image: "https://images.unsplash.com/photo-1630694093867-4b947d812bf0?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-red-500/30 to-orange-600/30",
@@ -136,7 +136,7 @@ const planets = [
     id: 'jupiter',
     name: "Jupiter",
     title: "The Mighty Protector",
-    description: "You're a natural leader with immense strength and presence. Like the giant of our solar system, you protect those around you and command respect wherever you go. Your wisdom comes from experience and your heart is as vast as your influence.",
+    description: "Jupiter is a natural leader with immense strength and presence. Like the giant of our solar system, it protects those around it and commands respect wherever it goes. Its wisdom comes from experience and its influence is as vast as its size.",
     traits: ["Protective", "Wise", "Powerful", "Magnetic"],
     image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-orange-400/30 to-red-600/30",
@@ -161,7 +161,7 @@ const planets = [
     id: 'saturn',
     name: "Saturn",
     title: "The Wise Strategist", 
-    description: "Thoughtful and methodical, you approach life with wisdom and patience. Your systematic thinking and reliability make you a natural leader. Like Saturn's magnificent rings, you bring structure and beauty to chaos.",
+    description: "Saturn is thoughtful and methodical, approaching the cosmos with wisdom and patience. Its systematic thinking and reliability make it a natural leader. Like Saturn's magnificent rings, it brings structure and beauty to chaos.",
     traits: ["Wise", "Patient", "Systematic", "Reliable"],
     image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-yellow-400/30 to-amber-600/30",
@@ -186,7 +186,7 @@ const planets = [
     id: 'uranus',
     name: "Uranus",
     title: "The Revolutionary Innovator",
-    description: "You're unique, innovative, and march to the beat of your own drum. Like Uranus rolling on its side, you approach life from unexpected angles. Your originality and vision inspire others to think differently.",
+    description: "Uranus is unique, innovative, and marches to the beat of its own drum. Like Uranus rolling on its side, it approaches cosmic life from unexpected angles. Its originality and vision inspire others to think differently.",
     traits: ["Innovative", "Unique", "Visionary", "Independent"],
     image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-cyan-400/30 to-blue-600/30",
@@ -211,7 +211,7 @@ const planets = [
     id: 'neptune',
     name: "Neptune",
     title: "The Mysterious Dreamer",
-    description: "Deep and enigmatic, you possess an otherworldly quality that draws people in. Like Neptune's distant beauty, you're complex and fascinating. Your intuition guides you through life's deepest mysteries.",
+    description: "Neptune is deep and enigmatic, possessing an otherworldly quality that draws others in. Like Neptune's distant beauty, it's complex and fascinating. Its intuition guides it through the cosmos's deepest mysteries.",
     traits: ["Mysterious", "Intuitive", "Deep", "Spiritual"],
     image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-blue-600/30 to-indigo-800/30",
@@ -246,14 +246,15 @@ const LearnPage = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen bg-black">
       {/* Solar System */}
       <div className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="text-center mb-12 z-20 relative">
+        {/* Title positioned at top to not block planets */}
+        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 text-center z-20">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
             Our Solar System
           </h1>
-          <p className="text-xl text-white/80 mb-8 animate-fade-in">
+          <p className="text-xl text-white/80 animate-fade-in">
             Click on any celestial body to learn more about it
           </p>
         </div>
@@ -265,7 +266,7 @@ const LearnPage = () => {
             {[120, 180, 240, 300, 380, 460, 520, 580].map((radius, index) => (
               <div
                 key={radius}
-                className="absolute border border-white/10 rounded-full"
+                className="absolute border border-white/20 rounded-full"
                 style={{
                   width: `${radius * 2}px`,
                   height: `${radius * 2}px`,
@@ -284,13 +285,12 @@ const LearnPage = () => {
                 backgroundImage: `url(${planets[0].image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                filter: 'brightness(1.3) contrast(1.2) saturate(1.3)',
-                mixBlendMode: 'screen'
+                filter: 'brightness(1.5) contrast(1.3) saturate(1.5) hue-rotate(20deg)',
               }}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${planets[0].glowColor} rounded-full blur-lg scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
               <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-white text-sm font-semibold bg-black/50 px-2 py-1 rounded whitespace-nowrap">
+                <span className="text-white text-sm font-semibold bg-black/80 px-2 py-1 rounded whitespace-nowrap">
                   {planets[0].name}
                 </span>
               </div>
@@ -301,6 +301,17 @@ const LearnPage = () => {
               const angle = (index * 45) % 360; // Distribute planets around orbits
               const x = Math.cos((angle * Math.PI) / 180) * planet.orbitRadius;
               const y = Math.sin((angle * Math.PI) / 180) * planet.orbitRadius;
+              
+              // Custom filters for each planet to make them look realistic
+              let planetFilter = 'brightness(1.2) contrast(1.2) saturate(1.3)';
+              if (planet.id === 'mercury') planetFilter = 'brightness(1.1) contrast(1.4) saturate(0.8) sepia(0.3)';
+              if (planet.id === 'venus') planetFilter = 'brightness(1.3) contrast(1.2) saturate(1.4) hue-rotate(30deg)';
+              if (planet.id === 'earth') planetFilter = 'brightness(1.2) contrast(1.3) saturate(1.5) hue-rotate(200deg)';
+              if (planet.id === 'mars') planetFilter = 'brightness(1.1) contrast(1.3) saturate(1.2) hue-rotate(10deg)';
+              if (planet.id === 'jupiter') planetFilter = 'brightness(1.2) contrast(1.4) saturate(1.3) hue-rotate(25deg)';
+              if (planet.id === 'saturn') planetFilter = 'brightness(1.1) contrast(1.2) saturate(1.1) hue-rotate(40deg)';
+              if (planet.id === 'uranus') planetFilter = 'brightness(1.1) contrast(1.2) saturate(1.4) hue-rotate(180deg)';
+              if (planet.id === 'neptune') planetFilter = 'brightness(1.0) contrast(1.3) saturate(1.5) hue-rotate(220deg)';
               
               return (
                 <button
@@ -314,13 +325,12 @@ const LearnPage = () => {
                     backgroundImage: `url(${planet.image})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    filter: 'brightness(1.2) contrast(1.2) saturate(1.3)',
-                    mixBlendMode: 'screen'
+                    filter: planetFilter,
                   }}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${planet.glowColor} rounded-full blur-lg scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white text-sm font-semibold bg-black/50 px-2 py-1 rounded whitespace-nowrap">
+                  <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-white text-sm font-semibold bg-black/80 px-2 py-1 rounded whitespace-nowrap">
                       {planet.name}
                     </span>
                   </div>
@@ -332,9 +342,9 @@ const LearnPage = () => {
       </div>
 
       {/* Planet Information */}
-      <div id="planet-info" className="min-h-screen bg-gradient-to-b from-transparent to-black/50 px-4 py-16">
+      <div id="planet-info" className="min-h-screen bg-black px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <Card className="bg-black/40 border-white/20 backdrop-blur-lg animate-fade-in">
+          <Card className="bg-gray-900/90 border-white/20 backdrop-blur-lg animate-fade-in">
             <div className="p-8">
               {/* Planet image section */}
               <div className="flex justify-center mb-8">
@@ -346,8 +356,16 @@ const LearnPage = () => {
                       backgroundImage: `url(${selectedPlanet.image})`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
-                      filter: 'contrast(1.2) saturate(1.3) brightness(1.2)',
-                      mixBlendMode: 'screen'
+                      filter: selectedPlanet.id === 'mercury' ? 'brightness(1.1) contrast(1.4) saturate(0.8) sepia(0.3)' :
+                              selectedPlanet.id === 'venus' ? 'brightness(1.3) contrast(1.2) saturate(1.4) hue-rotate(30deg)' :
+                              selectedPlanet.id === 'earth' ? 'brightness(1.2) contrast(1.3) saturate(1.5) hue-rotate(200deg)' :
+                              selectedPlanet.id === 'mars' ? 'brightness(1.1) contrast(1.3) saturate(1.2) hue-rotate(10deg)' :
+                              selectedPlanet.id === 'jupiter' ? 'brightness(1.2) contrast(1.4) saturate(1.3) hue-rotate(25deg)' :
+                              selectedPlanet.id === 'saturn' ? 'brightness(1.1) contrast(1.2) saturate(1.1) hue-rotate(40deg)' :
+                              selectedPlanet.id === 'uranus' ? 'brightness(1.1) contrast(1.2) saturate(1.4) hue-rotate(180deg)' :
+                              selectedPlanet.id === 'neptune' ? 'brightness(1.0) contrast(1.3) saturate(1.5) hue-rotate(220deg)' :
+                              selectedPlanet.id === 'sun' ? 'brightness(1.5) contrast(1.3) saturate(1.5) hue-rotate(20deg)' :
+                              'contrast(1.2) saturate(1.3) brightness(1.2)'
                     }}
                   />
                 </div>
@@ -365,15 +383,7 @@ const LearnPage = () => {
                 
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                   <p className="text-lg text-gray-100 leading-relaxed max-w-3xl mx-auto">
-                    {selectedPlanet.id === 'sun' ? selectedPlanet.description : selectedPlanet.description.replace(/You're|you|your|Your/g, match => {
-                      const replacements: { [key: string]: string } = {
-                        "You're": "This celestial body is",
-                        "you": "it",
-                        "your": "its", 
-                        "Your": "Its"
-                      };
-                      return replacements[match] || match;
-                    })}
+                    {selectedPlanet.description}
                   </p>
                 </div>
                 
