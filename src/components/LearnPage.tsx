@@ -290,7 +290,7 @@ const LearnPage = () => {
   const diagramOpacity = 0.3 + (scrollProgress * 0.7); // Fade in from 30% to 100%
 
   // Only show planet info when fully zoomed in AND a planet is selected
-  const isFullyZoomedIn = scrollProgress === 1;
+  const isFullyZoomedIn = scrollProgress >= 0.95; // Use 95% threshold instead of perfect 100%
   const shouldShowPlanetInfo = selectedPlanet && isFullyZoomedIn;
 
   return (
