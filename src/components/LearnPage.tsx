@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ExternalLink } from 'lucide-react';
 
-// Import the same planet data from ResultScreen
+// Updated planet data with correct PNG images
 const planets = [
   {
     id: 'sun',
@@ -13,11 +13,11 @@ const planets = [
     title: "The Life Giver",
     description: "The Sun is the star at the center of our solar system. It's a massive ball of hot plasma that provides the light and heat necessary for life on Earth. The Sun contains 99.86% of the mass in our solar system and its core temperature reaches about 15 million degrees Celsius.",
     traits: ["Nuclear fusion powerhouse", "Magnetic field generator", "Life sustainer", "Solar wind creator"],
-    image: "https://images.unsplash.com/photo-1614728894747-a83421f3afb9?w=800&h=800&fit=crop&crop=center",
+    image: "https://th.bing.com/th/id/OIP.20SqwzCKmn_95H2_Nu4VqwHaHa?r=0&rs=1&pid=ImgDetMain",
     glowColor: "from-yellow-400/30 to-orange-500/30",
     shadowColor: "shadow-yellow-500/20",
     learnMoreUrl: "https://www.nasa.gov/sun/",
-    size: "w-16 h-16",
+    size: "w-12 h-12",
     orbitRadius: 0,
     detailedInfo: {
       overview: "The Sun is a yellow dwarf star, a hot ball of glowing gases at the heart of our solar system. Its gravity holds the solar system together, keeping everything from the biggest planets to the smallest particles of debris in its orbit.",
@@ -38,12 +38,12 @@ const planets = [
     title: "The Swift Messenger",
     description: "Mercury is quick-thinking, adaptable, and always on the move. Like the planet closest to the Sun, it thrives under pressure and can handle extreme situations. Its agility and rapid orbital speed make it an excellent example of cosmic efficiency.",
     traits: ["Quick-thinking", "Adaptable", "Communicative", "Resilient"],
-    image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=800&fit=crop&crop=center",
+    image: "https://th.bing.com/th/id/OIP.r7vRcrm6TMerm32U8aDttwHaHa?r=0&rs=1&pid=ImgDetMain",
     glowColor: "from-gray-400/30 to-orange-500/30",
     shadowColor: "shadow-gray-500/20",
     learnMoreUrl: "https://www.nasa.gov/mercury/",
-    size: "w-8 h-8",
-    orbitRadius: 120,
+    size: "w-6 h-6",
+    orbitRadius: 80,
     detailedInfo: {
       overview: "Mercury is the smallest planet in our solar system and the closest to the Sun. Despite its proximity to the Sun, it has ice at its poles and experiences extreme temperature variations.",
       physicalCharacteristics: "Mercury has a diameter of about 3,032 miles (4,879 km), making it only slightly larger than Earth's Moon. It has no moons or rings.",
@@ -67,8 +67,8 @@ const planets = [
     glowColor: "from-pink-400/30 to-purple-600/30",
     shadowColor: "shadow-pink-500/20",
     learnMoreUrl: "https://venus.nasa.gov/",
-    size: "w-10 h-10",
-    orbitRadius: 180,
+    size: "w-7 h-7",
+    orbitRadius: 100,
     detailedInfo: {
       overview: "Venus is the second planet from the Sun and is often called Earth's twin due to similar size. However, it's the hottest planet in our solar system with surface temperatures hot enough to melt lead.",
       physicalCharacteristics: "Venus has a diameter of about 7,521 miles (12,104 km), almost the same as Earth. It rotates backwards compared to most planets and has no moons.",
@@ -88,12 +88,12 @@ const planets = [
     title: "The Nurturing Guardian",
     description: "Earth is grounded, caring, and deeply connected to life. Like our beautiful blue planet, it provides stability and support to all life in its orbit. Its empathy and wisdom make it a natural protector of the solar system.",
     traits: ["Nurturing", "Empathetic", "Stable", "Life-giving"],
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
+    image: "https://th.bing.com/th/id/R.f7d55168cbba981e7c1b0b39fb31ca6d?rik=Zc1WySqVPE4UbQ&pid=ImgRaw&r=0",
     glowColor: "from-blue-400/30 to-green-500/30",
     shadowColor: "shadow-blue-500/20",
     learnMoreUrl: "https://www.nasa.gov/earth/",
-    size: "w-12 h-12",
-    orbitRadius: 240,
+    size: "w-8 h-8",
+    orbitRadius: 120,
     detailedInfo: {
       overview: "Earth is the third planet from the Sun and the only known planet to harbor life. It's our home world, with diverse ecosystems, vast oceans, and a protective atmosphere that makes life possible.",
       physicalCharacteristics: "Earth has a diameter of about 7,918 miles (12,742 km) and one natural satellite, the Moon. It's composed of 71% water surface and has seven continents.",
@@ -113,12 +113,12 @@ const planets = [
     title: "The Adventurous Pioneer",
     description: "Mars is bold, passionate, and always ready for the next adventure. Like the Red Planet, it has a fiery spirit and isn't afraid to explore uncharted territories. Its courage inspires others to push beyond their limits.",
     traits: ["Courageous", "Energetic", "Independent", "Pioneering"],
-    image: "https://images.unsplash.com/photo-1630694093867-4b947d812bf0?w=800&h=800&fit=crop&crop=center",
+    image: "https://pngimg.com/uploads/mars_planet/mars_planet_PNG31.png",
     glowColor: "from-red-500/30 to-orange-600/30",
     shadowColor: "shadow-red-500/20",
     learnMoreUrl: "https://mars.nasa.gov/",
-    size: "w-10 h-10",
-    orbitRadius: 300,
+    size: "w-7 h-7",
+    orbitRadius: 140,
     detailedInfo: {
       overview: "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System. Known as the Red Planet due to iron oxide on its surface, Mars has fascinated humans for centuries.",
       physicalCharacteristics: "Mars has a diameter of about 4,220 miles (6,792 km), roughly half the size of Earth. It has two small moons, Phobos and Deimos, and the largest volcano in the solar system, Olympus Mons.",
@@ -138,12 +138,12 @@ const planets = [
     title: "The Mighty Protector",
     description: "Jupiter is a natural leader with immense strength and presence. Like the giant of our solar system, it protects those around it and commands respect wherever it goes. Its wisdom comes from experience and its influence is as vast as its size.",
     traits: ["Protective", "Wise", "Powerful", "Magnetic"],
-    image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=800&fit=crop&crop=center",
+    image: "https://png.pngtree.com/png-clipart/20230927/original/pngtree-3d-jupiter-planet-illustration-png-image_13003328.png",
     glowColor: "from-orange-400/30 to-red-600/30",
     shadowColor: "shadow-orange-500/20",
     learnMoreUrl: "https://www.nasa.gov/jupiter/",
-    size: "w-16 h-16",
-    orbitRadius: 380,
+    size: "w-12 h-12",
+    orbitRadius: 180,
     detailedInfo: {
       overview: "Jupiter is the largest planet in our solar system and the fifth from the Sun. This gas giant has a mass greater than all other planets combined and acts as a cosmic vacuum cleaner, protecting inner planets from asteroids.",
       physicalCharacteristics: "Jupiter has a diameter of about 86,881 miles (139,820 km) and at least 95 moons, including the four large Galilean moons. Its Great Red Spot is a storm larger than Earth.",
@@ -163,12 +163,12 @@ const planets = [
     title: "The Wise Strategist", 
     description: "Saturn is thoughtful and methodical, approaching the cosmos with wisdom and patience. Its systematic thinking and reliability make it a natural leader. Like Saturn's magnificent rings, it brings structure and beauty to chaos.",
     traits: ["Wise", "Patient", "Systematic", "Reliable"],
-    image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=800&fit=crop&crop=center",
+    image: "https://static.vecteezy.com/system/resources/previews/039/630/632/non_2x/ai-generated-saturn-planet-isolated-on-transparent-background-free-png.png",
     glowColor: "from-yellow-400/30 to-amber-600/30",
     shadowColor: "shadow-yellow-500/20",
     learnMoreUrl: "https://saturn.jpl.nasa.gov/",
-    size: "w-14 h-14",
-    orbitRadius: 460,
+    size: "w-10 h-10",
+    orbitRadius: 220,
     detailedInfo: {
       overview: "Saturn is the sixth planet from the Sun and the second-largest in our solar system. It's best known for its spectacular ring system, making it one of the most beautiful objects in our solar system.",
       physicalCharacteristics: "Saturn is a gas giant with a diameter of about 72,367 miles (116,464 km). It's less dense than water and has at least 146 moons, including Titan, which has a thick atmosphere.",
@@ -192,8 +192,8 @@ const planets = [
     glowColor: "from-cyan-400/30 to-blue-600/30",
     shadowColor: "shadow-cyan-500/20",
     learnMoreUrl: "https://www.nasa.gov/uranus/",
-    size: "w-12 h-12",
-    orbitRadius: 520,
+    size: "w-8 h-8",
+    orbitRadius: 260,
     detailedInfo: {
       overview: "Uranus is the seventh planet from the Sun and is unique for rotating on its side. This ice giant has a distinctive blue-green color due to methane in its atmosphere.",
       physicalCharacteristics: "Uranus has a diameter of about 31,518 miles (50,724 km) and 27 known moons. It has a faint ring system and rotates at a 98-degree angle to its orbit.",
@@ -217,8 +217,8 @@ const planets = [
     glowColor: "from-blue-600/30 to-indigo-800/30",
     shadowColor: "shadow-blue-500/20",
     learnMoreUrl: "https://neptune.nasa.gov/",
-    size: "w-12 h-12",
-    orbitRadius: 580,
+    size: "w-8 h-8",
+    orbitRadius: 300,
     detailedInfo: {
       overview: "Neptune is the eighth and outermost planet in our solar system. This ice giant is known for its deep blue color and is the windiest planet, with speeds reaching up to 1,200 mph.",
       physicalCharacteristics: "Neptune has a diameter of about 30,775 miles (49,528 km) and takes 165 Earth years to orbit the Sun. It has 16 known moons, with Triton being the largest.",
@@ -259,11 +259,11 @@ const LearnPage = () => {
           </p>
         </div>
 
-        {/* Solar System Layout with Orbital Rings */}
+        {/* Solar System Layout with Orbital Rings - Made smaller */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-full h-full max-w-6xl max-h-6xl">
-            {/* Orbital rings */}
-            {[120, 180, 240, 300, 380, 460, 520, 580].map((radius, index) => (
+          <div className="relative w-full h-full max-w-3xl max-h-3xl">
+            {/* Orbital rings - smaller radii */}
+            {[80, 100, 120, 140, 180, 220, 260, 300].map((radius, index) => (
               <div
                 key={radius}
                 className="absolute border border-white/20 rounded-full"
@@ -277,15 +277,13 @@ const LearnPage = () => {
               />
             ))}
 
-            {/* Sun at center */}
+            {/* Sun at center - now visible when not hovered */}
             <button
               onClick={() => handlePlanetClick(planets[0])}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full transition-all duration-300 hover:scale-110 cursor-pointer group z-10"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full transition-all duration-300 hover:scale-110 cursor-pointer group z-10 bg-cover bg-center bg-no-repeat"
               style={{
                 backgroundImage: `url(${planets[0].image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                filter: 'brightness(1.5) contrast(1.3) saturate(1.5) hue-rotate(20deg)',
+                backgroundSize: 'contain',
               }}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${planets[0].glowColor} rounded-full blur-lg scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
@@ -302,30 +300,17 @@ const LearnPage = () => {
               const x = Math.cos((angle * Math.PI) / 180) * planet.orbitRadius;
               const y = Math.sin((angle * Math.PI) / 180) * planet.orbitRadius;
               
-              // Custom filters for each planet to make them look realistic
-              let planetFilter = 'brightness(1.2) contrast(1.2) saturate(1.3)';
-              if (planet.id === 'mercury') planetFilter = 'brightness(1.1) contrast(1.4) saturate(0.8) sepia(0.3)';
-              if (planet.id === 'venus') planetFilter = 'brightness(1.3) contrast(1.2) saturate(1.4) hue-rotate(30deg)';
-              if (planet.id === 'earth') planetFilter = 'brightness(1.2) contrast(1.3) saturate(1.5) hue-rotate(200deg)';
-              if (planet.id === 'mars') planetFilter = 'brightness(1.1) contrast(1.3) saturate(1.2) hue-rotate(10deg)';
-              if (planet.id === 'jupiter') planetFilter = 'brightness(1.2) contrast(1.4) saturate(1.3) hue-rotate(25deg)';
-              if (planet.id === 'saturn') planetFilter = 'brightness(1.1) contrast(1.2) saturate(1.1) hue-rotate(40deg)';
-              if (planet.id === 'uranus') planetFilter = 'brightness(1.1) contrast(1.2) saturate(1.4) hue-rotate(180deg)';
-              if (planet.id === 'neptune') planetFilter = 'brightness(1.0) contrast(1.3) saturate(1.5) hue-rotate(220deg)';
-              
               return (
                 <button
                   key={planet.id}
                   onClick={() => handlePlanetClick(planet)}
-                  className={`absolute ${planet.size} rounded-full transition-all duration-300 hover:scale-110 cursor-pointer group z-10`}
+                  className={`absolute ${planet.size} rounded-full transition-all duration-300 hover:scale-110 cursor-pointer group z-10 bg-cover bg-center bg-no-repeat`}
                   style={{
                     left: `calc(50% + ${x}px)`,
                     top: `calc(50% + ${y}px)`,
                     transform: 'translate(-50%, -50%)',
                     backgroundImage: `url(${planet.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    filter: planetFilter,
+                    backgroundSize: 'contain',
                   }}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${planet.glowColor} rounded-full blur-lg scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
@@ -346,7 +331,7 @@ const LearnPage = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="bg-gray-900/90 border-white/20 backdrop-blur-lg animate-fade-in">
             <div className="p-8">
-              {/* Planet image section */}
+              {/* Planet image section - using correct images */}
               <div className="flex justify-center mb-8">
                 <div className="relative group">
                   <div className={`absolute inset-0 bg-gradient-to-br ${selectedPlanet.glowColor} rounded-full blur-2xl scale-110`}></div>
@@ -354,18 +339,8 @@ const LearnPage = () => {
                     className={`w-80 h-80 md:w-96 md:h-96 rounded-full relative z-10 ${selectedPlanet.shadowColor} shadow-2xl bg-cover bg-center bg-no-repeat`}
                     style={{ 
                       backgroundImage: `url(${selectedPlanet.image})`,
-                      backgroundSize: 'cover',
+                      backgroundSize: 'contain',
                       backgroundPosition: 'center',
-                      filter: selectedPlanet.id === 'mercury' ? 'brightness(1.1) contrast(1.4) saturate(0.8) sepia(0.3)' :
-                              selectedPlanet.id === 'venus' ? 'brightness(1.3) contrast(1.2) saturate(1.4) hue-rotate(30deg)' :
-                              selectedPlanet.id === 'earth' ? 'brightness(1.2) contrast(1.3) saturate(1.5) hue-rotate(200deg)' :
-                              selectedPlanet.id === 'mars' ? 'brightness(1.1) contrast(1.3) saturate(1.2) hue-rotate(10deg)' :
-                              selectedPlanet.id === 'jupiter' ? 'brightness(1.2) contrast(1.4) saturate(1.3) hue-rotate(25deg)' :
-                              selectedPlanet.id === 'saturn' ? 'brightness(1.1) contrast(1.2) saturate(1.1) hue-rotate(40deg)' :
-                              selectedPlanet.id === 'uranus' ? 'brightness(1.1) contrast(1.2) saturate(1.4) hue-rotate(180deg)' :
-                              selectedPlanet.id === 'neptune' ? 'brightness(1.0) contrast(1.3) saturate(1.5) hue-rotate(220deg)' :
-                              selectedPlanet.id === 'sun' ? 'brightness(1.5) contrast(1.3) saturate(1.5) hue-rotate(20deg)' :
-                              'contrast(1.2) saturate(1.3) brightness(1.2)'
                     }}
                   />
                 </div>
@@ -455,7 +430,7 @@ const LearnPage = () => {
                 <div className="pt-6">
                   <Button 
                     variant="outline" 
-                    className="border-white/30 text-white hover:bg-white/10"
+                    className="border-white/30 text-white hover:bg-white/10 hover:text-white bg-transparent"
                     onClick={() => window.open(selectedPlanet.learnMoreUrl, '_blank')}
                   >
                     <ExternalLink className="w-5 h-5 mr-2" />
