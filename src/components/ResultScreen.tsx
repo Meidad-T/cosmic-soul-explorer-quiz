@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { RefreshCw, Share2, Sparkles, Star, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { RefreshCw, Share2, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { useToast } from '@/hooks/use-toast';
 
 interface ResultScreenProps {
   answers: number[];
@@ -102,6 +103,8 @@ const planets = [
 ];
 
 const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
+  const { toast } = useToast();
+  
   // Simple algorithm to determine planet based on most frequent answer type
   const answerCounts = [0, 0, 0, 0];
   answers.forEach(answer => {
@@ -110,6 +113,30 @@ const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
   
   const planetIndex = answerCounts.indexOf(Math.max(...answerCounts));
   const planet = planets[planetIndex];
+
+  const handleShare = async () => {
+    try {
+      const shareText = `I just discovered that I'm planet ${planet.name} - ${planet.title}! 🪐 Find out what planet you are!`;
+      const currentUrl = window.location.href;
+      const shareUrl = `${currentUrl}?planet=${planet.name.toLowerCase()}`;
+      
+      await navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+      
+      toast({
+        title: "Link copied to clipboard!",
+        description: "Share your cosmic personality with friends",
+        duration: 3000,
+      });
+    } catch (error) {
+      console.error('Failed to copy to clipboard:', error);
+      toast({
+        title: "Couldn't copy link",
+        description: "Please try again",
+        variant: "destructive",
+        duration: 3000,
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
@@ -126,9 +153,12 @@ const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
               animationDuration: `${3 + Math.random() * 4}s`
             }}
           >
-            <Sparkles 
-              size={Math.random() * 6 + 2} 
-              className="text-white opacity-40"
+            <div 
+              className="w-1 h-1 bg-white rounded-full opacity-40"
+              style={{ 
+                width: `${Math.random() * 6 + 2}px`,
+                height: `${Math.random() * 6 + 2}px`
+              }}
             />
           </div>
         ))}
@@ -154,19 +184,12 @@ const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
                 <img 
                   src={planet.image}
                   alt={planet.name}
-                  className={`w-80 h-80 md:w-96 md:h-96 rounded-full object-cover relative z-10 ${planet.shadowColor} shadow-2xl animate-bounce group-hover:scale-105 transition-all duration-500`}
-                  style={{ animationDuration: '4s' }}
+                  className={`w-80 h-80 md:w-96 md:h-96 rounded-full object-cover relative z-10 ${planet.shadowColor} shadow-2xl group-hover:scale-105 transition-all duration-500`}
+                  style={{ 
+                    mixBlendMode: 'screen',
+                    filter: 'contrast(1.1) saturate(1.2)'
+                  }}
                 />
-                {/* Floating stars around planet */}
-                <div className="absolute -top-4 -right-4 animate-pulse">
-                  <Star className="w-8 h-8 text-yellow-400 fill-yellow-400" />
-                </div>
-                <div className="absolute -bottom-6 -left-6 animate-pulse" style={{ animationDelay: '1s' }}>
-                  <Star className="w-6 h-6 text-blue-400 fill-blue-400" />
-                </div>
-                <div className="absolute top-1/4 -left-8 animate-pulse" style={{ animationDelay: '2s' }}>
-                  <Star className="w-4 h-4 text-purple-400 fill-purple-400" />
-                </div>
               </div>
             </div>
             
@@ -249,7 +272,7 @@ const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
                     <ul className="space-y-2">
                       {planet.detailedInfo.funFacts.map((fact, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <Sparkles className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                          <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
                           {fact}
                         </li>
                       ))}
@@ -285,6 +308,7 @@ const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
           </Button>
           
           <Button 
+            onClick={handleShare}
             className="bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white px-8 py-4 text-lg rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-105"
             variant="outline"
           >
@@ -294,9 +318,9 @@ const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
         </div>
 
         <div className="text-center mt-8 text-blue-300 animate-fade-in flex items-center justify-center gap-2" style={{ animationDelay: '1s' }}>
-          <Sparkles className="w-5 h-5" />
+          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
           <span>Your cosmic journey reveals the planet that resonates with your soul</span>
-          <Sparkles className="w-5 h-5" />
+          <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
         </div>
       </div>
     </div>

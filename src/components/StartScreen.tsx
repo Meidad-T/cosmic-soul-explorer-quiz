@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Rocket, Stars, Globe } from 'lucide-react';
+import { Rocket, Globe } from 'lucide-react';
 
 interface StartScreenProps {
   onStart: () => void;
@@ -16,7 +16,7 @@ const StartScreen = ({ onStart }: StartScreenProps) => {
             <div className="relative">
               <Rocket className="w-20 h-20 text-white animate-bounce" />
               <div className="absolute -top-2 -right-2">
-                <Stars className="w-8 h-8 text-yellow-400 animate-pulse" />
+                <div className="w-4 h-4 bg-yellow-400 rounded-full animate-pulse" />
               </div>
             </div>
           </div>
