@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -290,6 +289,10 @@ const LearnPage = () => {
   const diagramScale = 1 + (scrollProgress * 0.5); // Zoom in 50%
   const diagramOpacity = 0.3 + (scrollProgress * 0.7); // Fade in from 30% to 100%
 
+  // Only show planet info when fully zoomed in AND a planet is selected
+  const isFullyZoomedIn = scrollProgress === 1;
+  const shouldShowPlanetInfo = selectedPlanet && isFullyZoomedIn;
+
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
       {/* Starry background */}
@@ -401,8 +404,8 @@ const LearnPage = () => {
       {/* Spacer to enable scrolling */}
       <div className="h-[100vh]"></div>
 
-      {/* Planet Information - Only show when a planet is selected */}
-      {selectedPlanet && (
+      {/* Planet Information - Only show when fully zoomed in AND a planet is selected */}
+      {shouldShowPlanetInfo && (
         <div id="planet-info" className="min-h-screen bg-black px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <Card className="bg-gray-900/90 border-white/20 backdrop-blur-lg animate-fade-in">
@@ -536,4 +539,3 @@ const LearnPage = () => {
 };
 
 export default LearnPage;
-
