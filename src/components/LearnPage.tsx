@@ -401,6 +401,9 @@ const LearnPage = () => {
       {/* Spacer to enable scrolling */}
       <div className="h-[100vh]"></div>
 
+      {/* Additional spacer to move planet info down */}
+      <div className="h-[400px]"></div>
+
       {/* Planet Information */}
       <div id="planet-info" className="min-h-screen bg-black px-4 py-16">
         <div className="max-w-4xl mx-auto">
