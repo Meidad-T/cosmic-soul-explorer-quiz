@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -276,9 +277,17 @@ const LearnPage = () => {
     });
   };
 
-  // Calculate zoom and opacity based on scroll
-  const textOpacity = Math.max(0, 1 - scrollY / 300);
-  const diagramScale = 1 + (scrollY / 1000) * 0.3; // 30% zoom max
+  // Calculate effects based on scroll (0-500px range)
+  const scrollProgress = Math.min(scrollY / 500, 1);
+  
+  // Text effects: move up and scale down
+  const textTranslateY = -scrollProgress * 200; // Move up 200px
+  const textScale = 1 - (scrollProgress * 0.3); // Scale down to 70%
+  const textOpacity = 1 - scrollProgress; // Fade out completely
+  
+  // Diagram effects: zoom in and center
+  const diagramScale = 1 + (scrollProgress * 0.5); // Zoom in 50%
+  const diagramOpacity = 0.3 + (scrollProgress * 0.7); // Fade in from 30% to 100%
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
@@ -297,25 +306,31 @@ const LearnPage = () => {
         ))}
       </div>
 
-      {/* Solar System */}
-      <div className="relative h-screen flex items-center justify-center overflow-hidden pt-32">
-        {/* Title with fade effect */}
+      {/* Fixed container for the zoom effect */}
+      <div className="fixed inset-0 flex items-center justify-center">
+        {/* Title with move up and scale down effect */}
         <div 
-          className="absolute top-16 left-1/2 transform -translate-x-1/2 text-center z-20 transition-opacity duration-300"
-          style={{ opacity: textOpacity }}
+          className="absolute text-center z-20 transition-all duration-100 ease-out"
+          style={{ 
+            opacity: textOpacity,
+            transform: `translateY(${textTranslateY}px) scale(${textScale})`,
+          }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
             Our Solar System
           </h1>
-          <p className="text-xl text-white/80 animate-fade-in">
+          <p className="text-xl text-white/80">
             Click on any celestial body to learn more about it
           </p>
         </div>
 
         {/* Solar System Layout with zoom effect */}
         <div 
-          className="absolute inset-0 flex items-center justify-center transition-transform duration-100 ease-out"
-          style={{ transform: `scale(${diagramScale})` }}
+          className="absolute inset-0 flex items-center justify-center transition-all duration-100 ease-out"
+          style={{ 
+            transform: `scale(${diagramScale})`,
+            opacity: diagramOpacity
+          }}
         >
           <div className="relative w-full h-full max-w-4xl max-h-4xl">
             {/* Orbital rings */}
@@ -381,6 +396,9 @@ const LearnPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Spacer to enable scrolling */}
+      <div className="h-[100vh]"></div>
 
       {/* Planet Information */}
       <div id="planet-info" className="min-h-screen bg-black px-4 py-16">
