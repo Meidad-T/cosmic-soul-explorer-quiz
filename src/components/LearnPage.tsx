@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -198,7 +196,7 @@ const planets = [
     detailedInfo: {
       overview: "Saturn is the sixth planet from the Sun and the second-largest in our solar system. It's best known for its spectacular ring system, making it one of the most beautiful objects in our solar system.",
       physicalCharacteristics: "Saturn is a gas giant with a diameter of about 72,367 miles (116,464 km). It's less dense than water and has at least 146 moons, including Titan, which has a thick atmosphere.",
-      atmosphere: "Saturn's atmosphere is composed mainly of hydrogen and helium, with powerful winds reaching speeds of up to 1,100 mph (1,800 km/h).",
+      atmosphere: "Saturn's atmosphere is composed mainly of hydrogen and helium, with powerful winds reaching speeds of up to 1,100 mph.",
       exploration: "The Cassini spacecraft studied Saturn for 13 years, providing incredible insights into the planet and its moons before ending its mission in 2017.",
       funFacts: [
         "Saturn's rings are made mostly of ice particles and rocky debris",
@@ -263,19 +261,38 @@ const planets = [
 const LearnPage = () => {
   const [selectedPlanet, setSelectedPlanet] = useState(null);
   const [scrollY, setScrollY] = useState(0);
+  const [hasScrolledToZoom, setHasScrolledToZoom] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      const newScrollY = window.scrollY;
+      setScrollY(newScrollY);
+      
+      // Mark as zoomed when user has scrolled significantly
+      if (newScrollY > 400) {
+        setHasScrolledToZoom(true);
+      } else {
+        setHasScrolledToZoom(false);
+        // Clear selected planet when scrolling back up
+        if (newScrollY < 200) {
+          setSelectedPlanet(null);
+        }
+      }
+    };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handlePlanetClick = (planet: typeof planets[0]) => {
     setSelectedPlanet(planet);
-    document.getElementById('planet-info')?.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    });
+    // Only scroll to info if we're already zoomed in
+    if (hasScrolledToZoom) {
+      document.getElementById('planet-info')?.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   // Calculate effects based on scroll (0-500px range)
@@ -289,6 +306,9 @@ const LearnPage = () => {
   // Diagram effects: zoom in and center
   const diagramScale = 1 + (scrollProgress * 0.5); // Zoom in 50%
   const diagramOpacity = 0.3 + (scrollProgress * 0.7); // Fade in from 30% to 100%
+
+  // Only show planet info when user has scrolled to zoom AND selected a planet
+  const shouldShowPlanetInfo = selectedPlanet && hasScrolledToZoom;
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
@@ -401,8 +421,8 @@ const LearnPage = () => {
       {/* Spacer to enable scrolling */}
       <div className="h-[100vh]"></div>
 
-      {/* Planet Information - Only show when a planet is selected */}
-      {selectedPlanet && (
+      {/* Planet Information - Only show when scrolled to zoom AND a planet is selected */}
+      {shouldShowPlanetInfo && (
         <div id="planet-info" className="min-h-screen bg-black px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <Card className="bg-gray-900/90 border-white/20 backdrop-blur-lg animate-fade-in">
@@ -536,4 +556,3 @@ const LearnPage = () => {
 };
 
 export default LearnPage;
-
