@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -13,7 +12,7 @@ const planets = [
     title: "The Life Giver",
     description: "The Sun is the star at the center of our solar system. It's a massive ball of hot plasma that provides the light and heat necessary for life on Earth. The Sun contains 99.86% of the mass in our solar system and its core temperature reaches about 15 million degrees Celsius.",
     traits: ["Nuclear fusion powerhouse", "Magnetic field generator", "Life sustainer", "Solar wind creator"],
-    image: "https://png.pngtree.com/png-clipart/20230414/original/pngtree-summer-real-texture-sun-png-image_9054207.png",
+    image: "https://th.bing.com/th/id/R.03fa97f5e3d4e7423016f6e944540b78?rik=xrYNt3W1mfAnPQ&pid=ImgRaw&r=0",
     glowColor: "from-yellow-400/30 to-orange-500/30",
     shadowColor: "shadow-yellow-500/20",
     learnMoreUrl: "https://www.nasa.gov/sun/",
@@ -261,6 +260,13 @@ const planets = [
 
 const LearnPage = () => {
   const [selectedPlanet, setSelectedPlanet] = useState(planets[0]);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handlePlanetClick = (planet: typeof planets[0]) => {
     setSelectedPlanet(planet);
@@ -269,6 +275,10 @@ const LearnPage = () => {
       block: 'start'
     });
   };
+
+  // Calculate zoom and opacity based on scroll
+  const textOpacity = Math.max(0, 1 - scrollY / 300);
+  const diagramScale = 1 + (scrollY / 1000) * 0.3; // 30% zoom max
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
@@ -289,8 +299,11 @@ const LearnPage = () => {
 
       {/* Solar System */}
       <div className="relative h-screen flex items-center justify-center overflow-hidden pt-32">
-        {/* Title positioned higher to avoid blocking planets */}
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 text-center z-20">
+        {/* Title with fade effect */}
+        <div 
+          className="absolute top-16 left-1/2 transform -translate-x-1/2 text-center z-20 transition-opacity duration-300"
+          style={{ opacity: textOpacity }}
+        >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
             Our Solar System
           </h1>
@@ -299,10 +312,13 @@ const LearnPage = () => {
           </p>
         </div>
 
-        {/* Solar System Layout with Orbital Rings - Made smaller */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-full h-full max-w-2xl max-h-2xl">
-            {/* Orbital rings - smaller radii */}
+        {/* Solar System Layout with zoom effect */}
+        <div 
+          className="absolute inset-0 flex items-center justify-center transition-transform duration-100 ease-out"
+          style={{ transform: `scale(${diagramScale})` }}
+        >
+          <div className="relative w-full h-full max-w-4xl max-h-4xl">
+            {/* Orbital rings */}
             {[60, 75, 90, 100, 115, 140, 170, 200, 230].map((radius, index) => (
               <div
                 key={radius}
@@ -317,7 +333,7 @@ const LearnPage = () => {
               />
             ))}
 
-            {/* Sun at center - always visible */}
+            {/* Sun at center */}
             <button
               onClick={() => handlePlanetClick(planets[0])}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full transition-all duration-300 hover:scale-110 cursor-pointer group z-10 bg-cover bg-center bg-no-repeat"
@@ -336,7 +352,7 @@ const LearnPage = () => {
 
             {/* Planets on orbits */}
             {planets.slice(1).map((planet, index) => {
-              const angle = (index * 40) % 360; // Distribute planets around orbits
+              const angle = (index * 40) % 360;
               const x = Math.cos((angle * Math.PI) / 180) * planet.orbitRadius;
               const y = Math.sin((angle * Math.PI) / 180) * planet.orbitRadius;
               
@@ -371,7 +387,7 @@ const LearnPage = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="bg-gray-900/90 border-white/20 backdrop-blur-lg animate-fade-in">
             <div className="p-8">
-              {/* Planet image section - using correct images */}
+              {/* Planet image section */}
               <div className="flex justify-center mb-8">
                 <div className="relative group">
                   <div className={`absolute inset-0 bg-gradient-to-br ${selectedPlanet.glowColor} rounded-full blur-2xl scale-110`}></div>

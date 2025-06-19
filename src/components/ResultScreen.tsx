@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -16,7 +17,7 @@ const planets = [
     title: "The Adventurous Pioneer",
     description: "You're bold, passionate, and always ready for the next adventure. Like the Red Planet, you have a fiery spirit and aren't afraid to explore uncharted territories. Your courage inspires others to push beyond their limits.",
     traits: ["Courageous", "Energetic", "Independent", "Pioneering"],
-    image: "https://images.unsplash.com/photo-1630694093867-4b947d812bf0?w=800&h=800&fit=crop&crop=center",
+    image: "https://pngimg.com/uploads/mars_planet/mars_planet_PNG31.png",
     glowColor: "from-red-500/30 to-orange-600/30",
     shadowColor: "shadow-red-500/20",
     learnMoreUrl: "https://mars.nasa.gov/",
@@ -60,7 +61,7 @@ const planets = [
     title: "The Nurturing Guardian",
     description: "You're grounded, caring, and deeply connected to life around you. Like our beautiful blue planet, you provide stability and support to those in your orbit. Your empathy and wisdom make you a natural protector.",
     traits: ["Nurturing", "Empathetic", "Stable", "Life-giving"],
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
+    image: "https://th.bing.com/th/id/R.f7d55168cbba981e7c1b0b39fb31ca6d?rik=Zc1WySqVPE4UbQ&pid=ImgRaw&r=0",
     glowColor: "from-blue-400/30 to-green-500/30",
     shadowColor: "shadow-blue-500/20",
     learnMoreUrl: "https://www.nasa.gov/earth/",
@@ -82,7 +83,7 @@ const planets = [
     title: "The Mighty Protector",
     description: "You're a natural leader with immense strength and presence. Like the giant of our solar system, you protect those around you and command respect wherever you go. Your wisdom comes from experience and your heart is as vast as your influence.",
     traits: ["Protective", "Wise", "Powerful", "Magnetic"],
-    image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=800&fit=crop&crop=center",
+    image: "https://static.vecteezy.com/system/resources/thumbnails/049/514/755/small_2x/jupiter-planet-closeup-view-isolated-transparent-png.png",
     glowColor: "from-orange-400/30 to-red-600/30",
     shadowColor: "shadow-orange-500/20",
     learnMoreUrl: "https://www.nasa.gov/jupiter/",
@@ -104,7 +105,7 @@ const planets = [
     title: "The Wise Strategist", 
     description: "Thoughtful and methodical, you approach life with wisdom and patience. Your systematic thinking and reliability make you a natural leader. Like Saturn's magnificent rings, you bring structure and beauty to chaos.",
     traits: ["Wise", "Patient", "Systematic", "Reliable"],
-    image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=800&fit=crop&crop=center",
+    image: "https://static.vecteezy.com/system/resources/previews/039/630/632/non_2x/ai-generated-saturn-planet-isolated-on-transparent-background-free-png.png",
     glowColor: "from-yellow-400/30 to-amber-600/30",
     shadowColor: "shadow-yellow-500/20",
     learnMoreUrl: "https://saturn.jpl.nasa.gov/",
@@ -126,7 +127,7 @@ const planets = [
     title: "The Mysterious Dreamer",
     description: "Deep and enigmatic, you possess an otherworldly quality that draws people in. Like Neptune's distant beauty, you're complex and fascinating. Your intuition guides you through life's deepest mysteries.",
     traits: ["Mysterious", "Intuitive", "Deep", "Spiritual"],
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
+    image: "https://jfbdesign.com/wp-content/uploads/revslider/solar-system-showcase-slider1/neptune.png",
     glowColor: "from-blue-600/30 to-indigo-800/30",
     shadowColor: "shadow-blue-500/20",
     learnMoreUrl: "https://neptune.nasa.gov/",
@@ -148,7 +149,7 @@ const planets = [
     title: "The Swift Messenger",
     description: "You're quick-thinking, adaptable, and always on the move. Like the planet closest to the Sun, you thrive under pressure and can handle extreme situations. Your agility and communication skills make you an excellent connector of people and ideas.",
     traits: ["Quick-thinking", "Adaptable", "Communicative", "Resilient"],
-    image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=800&fit=crop&crop=center",
+    image: "https://th.bing.com/th/id/OIP.r7vRcrm6TMerm32U8aDttwHaHa?r=0&rs=1&pid=ImgDetMain",
     glowColor: "from-gray-400/30 to-orange-500/30",
     shadowColor: "shadow-gray-500/20",
     learnMoreUrl: "https://www.nasa.gov/mercury/",
@@ -170,7 +171,7 @@ const planets = [
     title: "The Revolutionary Innovator",
     description: "You're unique, innovative, and march to the beat of your own drum. Like Uranus rolling on its side, you approach life from unexpected angles. Your originality and vision inspire others to think differently.",
     traits: ["Innovative", "Unique", "Visionary", "Independent"],
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
+    image: "https://wallpapers.com/images/hd/uranus-astronomical-object-png-ayc-b770a2f4gjnhxol8.png",
     glowColor: "from-cyan-400/30 to-blue-600/30",
     shadowColor: "shadow-cyan-500/20",
     learnMoreUrl: "https://www.nasa.gov/uranus/",
@@ -264,7 +265,7 @@ const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
           <div className={`absolute inset-0 bg-gradient-to-br ${planet.glowColor} blur-3xl opacity-50`}></div>
           
           <div className="relative z-10">
-            {/* Planet image section - FIXED AND CENTERED */}
+            {/* Planet image section */}
             <div className="flex justify-center mb-8">
               <div className="relative group">
                 <div className={`absolute inset-0 bg-gradient-to-br ${planet.glowColor} rounded-full blur-2xl scale-110`}></div>
@@ -272,10 +273,8 @@ const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
                   className={`w-80 h-80 md:w-96 md:h-96 rounded-full relative z-10 ${planet.shadowColor} shadow-2xl bg-cover bg-center bg-no-repeat`}
                   style={{ 
                     backgroundImage: `url(${planet.image})`,
-                    backgroundSize: 'cover',
+                    backgroundSize: 'contain',
                     backgroundPosition: 'center',
-                    filter: 'contrast(1.2) saturate(1.3) brightness(1.2)',
-                    mixBlendMode: 'screen'
                   }}
                 />
               </div>
