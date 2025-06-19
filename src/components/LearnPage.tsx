@@ -280,10 +280,10 @@ const LearnPage = () => {
   // Calculate effects based on scroll (0-500px range)
   const scrollProgress = Math.min(scrollY / 500, 1);
   
-  // Text effects: move up and scale down
+  // Text effects: IMMEDIATE disappear when any scroll happens
+  const textVisible = scrollY === 0; // Only visible at absolute top
   const textTranslateY = -scrollProgress * 200; // Move up 200px
   const textScale = 1 - (scrollProgress * 0.3); // Scale down to 70%
-  const textOpacity = 1 - scrollProgress; // Fade out completely
   
   // Diagram effects: zoom in and center
   const diagramScale = 1 + (scrollProgress * 0.5); // Zoom in 50%
@@ -308,21 +308,22 @@ const LearnPage = () => {
 
       {/* Fixed container for the zoom effect */}
       <div className="fixed inset-0 flex items-center justify-center">
-        {/* Title with move up and scale down effect */}
-        <div 
-          className="absolute text-center z-20 transition-all duration-100 ease-out"
-          style={{ 
-            opacity: textOpacity,
-            transform: `translateY(${textTranslateY}px) scale(${textScale})`,
-          }}
-        >
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-            Our Solar System
-          </h1>
-          <p className="text-xl text-white/80">
-            Click on any celestial body to learn more about it
-          </p>
-        </div>
+        {/* Title with immediate disappear on scroll */}
+        {textVisible && (
+          <div 
+            className="absolute text-center z-20 transition-all duration-100 ease-out"
+            style={{ 
+              transform: `translateY(${textTranslateY}px) scale(${textScale})`,
+            }}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+              Our Solar System
+            </h1>
+            <p className="text-xl text-white/80">
+              Click on any celestial body to learn more about it
+            </p>
+          </div>
+        )}
 
         {/* Solar System Layout with zoom effect */}
         <div 
