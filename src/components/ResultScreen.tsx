@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -61,7 +60,7 @@ const planets = [
     title: "The Nurturing Guardian",
     description: "You're grounded, caring, and deeply connected to life around you. Like our beautiful blue planet, you provide stability and support to those in your orbit. Your empathy and wisdom make you a natural protector.",
     traits: ["Nurturing", "Empathetic", "Stable", "Life-giving"],
-    image: "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&h=800&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-blue-400/30 to-green-500/30",
     shadowColor: "shadow-blue-500/20",
     learnMoreUrl: "https://www.nasa.gov/earth/",
@@ -83,7 +82,7 @@ const planets = [
     title: "The Mighty Protector",
     description: "You're a natural leader with immense strength and presence. Like the giant of our solar system, you protect those around you and command respect wherever you go. Your wisdom comes from experience and your heart is as vast as your influence.",
     traits: ["Protective", "Wise", "Powerful", "Magnetic"],
-    image: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&h=800&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-orange-400/30 to-red-600/30",
     shadowColor: "shadow-orange-500/20",
     learnMoreUrl: "https://www.nasa.gov/jupiter/",
@@ -268,14 +267,15 @@ const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
             {/* Planet image section - FIXED AND CENTERED */}
             <div className="flex justify-center mb-8">
               <div className="relative group">
-                <div className={`absolute inset-0 bg-gradient-to-br ${planet.glowColor} rounded-full blur-2xl scale-110 transition-transform duration-500`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${planet.glowColor} rounded-full blur-2xl scale-110`}></div>
                 <div 
-                  className={`w-80 h-80 md:w-96 md:h-96 rounded-full relative z-10 ${planet.shadowColor} shadow-2xl transition-all duration-500 bg-cover bg-center bg-no-repeat`}
+                  className={`w-80 h-80 md:w-96 md:h-96 rounded-full relative z-10 ${planet.shadowColor} shadow-2xl bg-cover bg-center bg-no-repeat`}
                   style={{ 
                     backgroundImage: `url(${planet.image})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    filter: 'contrast(1.2) saturate(1.3) brightness(1.1)'
+                    filter: 'contrast(1.2) saturate(1.3) brightness(1.2)',
+                    mixBlendMode: 'screen'
                   }}
                 />
               </div>
