@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { RefreshCw, Share2, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { RefreshCw, Share2, ExternalLink } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useToast } from '@/hooks/use-toast';
 
@@ -35,11 +35,77 @@ const planets = [
     }
   },
   {
+    name: "Venus",
+    title: "The Creative Harmonizer", 
+    description: "You bring beauty and creativity wherever you go. Like Venus shining brightest in the sky, your artistic nature illuminates the world around you. Your harmonious spirit creates balance in chaos.",
+    traits: ["Creative", "Artistic", "Harmonious", "Inspiring"],
+    image: "https://images.unsplash.com/photo-1614728894747-a83421f3afb9?w=800&h=800&fit=crop&crop=center",
+    glowColor: "from-pink-400/30 to-purple-600/30",
+    shadowColor: "shadow-pink-500/20",
+    learnMoreUrl: "https://venus.nasa.gov/",
+    detailedInfo: {
+      overview: "Venus is the second planet from the Sun and is often called Earth's twin due to similar size. However, it's the hottest planet in our solar system with surface temperatures hot enough to melt lead.",
+      physicalCharacteristics: "Venus has a diameter of about 7,521 miles (12,104 km), almost the same as Earth. It rotates backwards compared to most planets and has no moons.",
+      atmosphere: "Venus has an extremely thick atmosphere made mostly of carbon dioxide with clouds of sulfuric acid, creating a runaway greenhouse effect.",
+      exploration: "Many spacecraft have studied Venus, including the Soviet Venera missions that successfully landed on its surface, and more recently, the Parker Solar Probe and BepiColombo.",
+      funFacts: [
+        "Venus is the brightest planet in Earth's sky",
+        "A day on Venus is longer than a year on Venus",
+        "Surface pressure is 90 times greater than Earth's",
+        "Venus has over 1,000 volcanoes"
+      ]
+    }
+  },
+  {
+    name: "Earth",
+    title: "The Nurturing Guardian",
+    description: "You're grounded, caring, and deeply connected to life around you. Like our beautiful blue planet, you provide stability and support to those in your orbit. Your empathy and wisdom make you a natural protector.",
+    traits: ["Nurturing", "Empathetic", "Stable", "Life-giving"],
+    image: "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&h=800&fit=crop&crop=center",
+    glowColor: "from-blue-400/30 to-green-500/30",
+    shadowColor: "shadow-blue-500/20",
+    learnMoreUrl: "https://www.nasa.gov/earth/",
+    detailedInfo: {
+      overview: "Earth is the third planet from the Sun and the only known planet to harbor life. It's our home world, with diverse ecosystems, vast oceans, and a protective atmosphere that makes life possible.",
+      physicalCharacteristics: "Earth has a diameter of about 7,918 miles (12,742 km) and one natural satellite, the Moon. It's composed of 71% water surface and has seven continents.",
+      atmosphere: "Earth's atmosphere is 78% nitrogen and 21% oxygen, with trace amounts of other gases. This perfect balance supports all known life forms.",
+      exploration: "Earth is constantly studied by satellites, space stations, and ground-based research. The International Space Station orbits Earth every 90 minutes.",
+      funFacts: [
+        "Earth is the only planet not named after a god",
+        "A year on Earth is exactly 365.25 days",
+        "Earth's core is as hot as the Sun's surface",
+        "The Amazon rainforest produces 20% of the world's oxygen"
+      ]
+    }
+  },
+  {
+    name: "Jupiter",
+    title: "The Mighty Protector",
+    description: "You're a natural leader with immense strength and presence. Like the giant of our solar system, you protect those around you and command respect wherever you go. Your wisdom comes from experience and your heart is as vast as your influence.",
+    traits: ["Protective", "Wise", "Powerful", "Magnetic"],
+    image: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&h=800&fit=crop&crop=center",
+    glowColor: "from-orange-400/30 to-red-600/30",
+    shadowColor: "shadow-orange-500/20",
+    learnMoreUrl: "https://www.nasa.gov/jupiter/",
+    detailedInfo: {
+      overview: "Jupiter is the largest planet in our solar system and the fifth from the Sun. This gas giant has a mass greater than all other planets combined and acts as a cosmic vacuum cleaner, protecting inner planets from asteroids.",
+      physicalCharacteristics: "Jupiter has a diameter of about 86,881 miles (139,820 km) and at least 95 moons, including the four large Galilean moons. Its Great Red Spot is a storm larger than Earth.",
+      atmosphere: "Jupiter's atmosphere is mostly hydrogen and helium, with colorful bands created by different chemical compounds and extreme winds reaching 400 mph.",
+      exploration: "Multiple missions have studied Jupiter, including Voyager, Galileo, and currently Juno, which has provided stunning images and data about the planet's interior.",
+      funFacts: [
+        "Jupiter has the shortest day of all planets - just 10 hours",
+        "Jupiter's moon Europa may have twice as much water as Earth's oceans",
+        "The Great Red Spot has been raging for at least 400 years",
+        "Jupiter acts as a 'cosmic vacuum cleaner' protecting Earth from asteroids"
+      ]
+    }
+  },
+  {
     name: "Saturn",
     title: "The Wise Strategist", 
     description: "Thoughtful and methodical, you approach life with wisdom and patience. Your systematic thinking and reliability make you a natural leader. Like Saturn's magnificent rings, you bring structure and beauty to chaos.",
     traits: ["Wise", "Patient", "Systematic", "Reliable"],
-    image: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&h=800&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-yellow-400/30 to-amber-600/30",
     shadowColor: "shadow-yellow-500/20",
     learnMoreUrl: "https://saturn.jpl.nasa.gov/",
@@ -61,7 +127,7 @@ const planets = [
     title: "The Mysterious Dreamer",
     description: "Deep and enigmatic, you possess an otherworldly quality that draws people in. Like Neptune's distant beauty, you're complex and fascinating. Your intuition guides you through life's deepest mysteries.",
     traits: ["Mysterious", "Intuitive", "Deep", "Spiritual"],
-    image: "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&h=800&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
     glowColor: "from-blue-600/30 to-indigo-800/30",
     shadowColor: "shadow-blue-500/20",
     learnMoreUrl: "https://neptune.nasa.gov/",
@@ -79,24 +145,46 @@ const planets = [
     }
   },
   {
-    name: "Venus",
-    title: "The Creative Harmonizer",
-    description: "You bring beauty and creativity wherever you go. Like Venus shining brightest in the sky, your artistic nature illuminates the world around you. Your harmonious spirit creates balance in chaos.",
-    traits: ["Creative", "Artistic", "Harmonious", "Inspiring"],
-    image: "https://images.unsplash.com/photo-1614728894747-a83421f3afb9?w=800&h=800&fit=crop&crop=center",
-    glowColor: "from-pink-400/30 to-purple-600/30",
-    shadowColor: "shadow-pink-500/20",
-    learnMoreUrl: "https://venus.nasa.gov/",
+    name: "Mercury",
+    title: "The Swift Messenger",
+    description: "You're quick-thinking, adaptable, and always on the move. Like the planet closest to the Sun, you thrive under pressure and can handle extreme situations. Your agility and communication skills make you an excellent connector of people and ideas.",
+    traits: ["Quick-thinking", "Adaptable", "Communicative", "Resilient"],
+    image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=800&fit=crop&crop=center",
+    glowColor: "from-gray-400/30 to-orange-500/30",
+    shadowColor: "shadow-gray-500/20",
+    learnMoreUrl: "https://www.nasa.gov/mercury/",
     detailedInfo: {
-      overview: "Venus is the second planet from the Sun and is often called Earth's twin due to similar size. However, it's the hottest planet in our solar system with surface temperatures hot enough to melt lead.",
-      physicalCharacteristics: "Venus has a diameter of about 7,521 miles (12,104 km), almost the same as Earth. It rotates backwards compared to most planets and has no moons.",
-      atmosphere: "Venus has an extremely thick atmosphere made mostly of carbon dioxide with clouds of sulfuric acid, creating a runaway greenhouse effect.",
-      exploration: "Many spacecraft have studied Venus, including the Soviet Venera missions that successfully landed on its surface, and more recently, the Parker Solar Probe and BepiColombo.",
+      overview: "Mercury is the smallest planet in our solar system and the closest to the Sun. Despite its proximity to the Sun, it has ice at its poles and experiences extreme temperature variations.",
+      physicalCharacteristics: "Mercury has a diameter of about 3,032 miles (4,879 km), making it only slightly larger than Earth's Moon. It has no moons or rings.",
+      atmosphere: "Mercury has virtually no atmosphere, which means it can't retain heat, leading to temperature swings from 800°F (427°C) during the day to -290°F (-179°C) at night.",
+      exploration: "Mercury has been visited by two spacecraft: Mariner 10 and MESSENGER. The BepiColombo mission is currently en route to study Mercury further.",
       funFacts: [
-        "Venus is the brightest planet in Earth's sky",
-        "A day on Venus is longer than a year on Venus",
-        "Surface pressure is 90 times greater than Earth's",
-        "Venus has over 1,000 volcanoes"
+        "A year on Mercury is only 88 Earth days",
+        "Mercury has the most eccentric orbit of all planets",
+        "Despite being closest to the Sun, Mercury has ice at its poles",
+        "Mercury's core makes up about 75% of the planet's radius"
+      ]
+    }
+  },
+  {
+    name: "Uranus",
+    title: "The Revolutionary Innovator",
+    description: "You're unique, innovative, and march to the beat of your own drum. Like Uranus rolling on its side, you approach life from unexpected angles. Your originality and vision inspire others to think differently.",
+    traits: ["Innovative", "Unique", "Visionary", "Independent"],
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=800&fit=crop&crop=center",
+    glowColor: "from-cyan-400/30 to-blue-600/30",
+    shadowColor: "shadow-cyan-500/20",
+    learnMoreUrl: "https://www.nasa.gov/uranus/",
+    detailedInfo: {
+      overview: "Uranus is the seventh planet from the Sun and is unique for rotating on its side. This ice giant has a distinctive blue-green color due to methane in its atmosphere.",
+      physicalCharacteristics: "Uranus has a diameter of about 31,518 miles (50,724 km) and 27 known moons. It has a faint ring system and rotates at a 98-degree angle to its orbit.",
+      atmosphere: "Uranus's atmosphere is composed of hydrogen, helium, and methane. The methane gives it its blue-green color and it's the coldest planetary atmosphere in the solar system.",
+      exploration: "Only Voyager 2 has visited Uranus, flying by in 1986. Most of our knowledge about this distant world comes from that single encounter and telescope observations.",
+      funFacts: [
+        "Uranus rotates on its side, possibly due to an ancient collision",
+        "A day on Uranus is about 17 hours long",
+        "Uranus has the coldest planetary atmosphere in the solar system",
+        "Uranus was the first planet discovered with a telescope"
       ]
     }
   }
@@ -105,14 +193,14 @@ const planets = [
 const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
   const { toast } = useToast();
   
-  // Simple algorithm to determine planet based on most frequent answer type
-  const answerCounts = [0, 0, 0, 0];
+  // Enhanced algorithm to determine planet based on most frequent answer type
+  const answerCounts = [0, 0, 0, 0, 0, 0, 0, 0];
   answers.forEach(answer => {
     answerCounts[answer]++;
   });
   
   const planetIndex = answerCounts.indexOf(Math.max(...answerCounts));
-  const planet = planets[planetIndex];
+  const planet = planets[planetIndex % planets.length];
 
   const handleShare = async () => {
     try {
@@ -177,17 +265,17 @@ const ResultScreen = ({ answers, onRestart }: ResultScreenProps) => {
           <div className={`absolute inset-0 bg-gradient-to-br ${planet.glowColor} blur-3xl opacity-50`}></div>
           
           <div className="relative z-10">
-            {/* Planet image section */}
+            {/* Planet image section - FIXED AND CENTERED */}
             <div className="flex justify-center mb-8">
               <div className="relative group">
-                <div className={`absolute inset-0 bg-gradient-to-br ${planet.glowColor} rounded-full blur-2xl scale-110 group-hover:scale-125 transition-transform duration-500`}></div>
-                <img 
-                  src={planet.image}
-                  alt={planet.name}
-                  className={`w-80 h-80 md:w-96 md:h-96 rounded-full object-cover relative z-10 ${planet.shadowColor} shadow-2xl group-hover:scale-105 transition-all duration-500`}
+                <div className={`absolute inset-0 bg-gradient-to-br ${planet.glowColor} rounded-full blur-2xl scale-110 transition-transform duration-500`}></div>
+                <div 
+                  className={`w-80 h-80 md:w-96 md:h-96 rounded-full relative z-10 ${planet.shadowColor} shadow-2xl transition-all duration-500 bg-cover bg-center bg-no-repeat`}
                   style={{ 
-                    mixBlendMode: 'screen',
-                    filter: 'contrast(1.1) saturate(1.2)'
+                    backgroundImage: `url(${planet.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: 'contrast(1.2) saturate(1.3) brightness(1.1)'
                   }}
                 />
               </div>
